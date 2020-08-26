@@ -7,7 +7,7 @@ export async function up(knex: Knex){
         table.string('usu_nome').notNullable();
         table.string('usu_email').unique().notNullable();
         table.string('usu_senha').notNullable();
-        table.string('usu_empresa').notNullable().references('emp_id').inTable('empresas');
+        table.string('usu_emp_id').notNullable().references('emp_id').inTable('empresas');
         table.string('usu_tipo').notNullable();
         table.string('usu_status').notNullable();
 

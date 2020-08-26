@@ -14,7 +14,7 @@ export async function up(knex:Knex){
         table.string('via_observacao').notNullable();
         table.string('via_status').notNullable();
 
-    }).raw('ALTER TABLE viagens AUTO_INCREMENT = 1000000000');
+    })//.raw('ALTER TABLE viagens AUTO_INCREMENT = 1000000000');
 }
 
 export async function down(knex:Knex){
