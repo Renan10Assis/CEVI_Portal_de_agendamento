@@ -5,6 +5,7 @@ import EmpresaEnderecosController from './database/controllers/EmpresaEnderecosC
 import MotoristaController from './database/controllers/MotoristaController';
 import ViagemController from './database/controllers/ViagemController';
 import EnderecoController from './database/controllers/EnderecoController';
+import {api} from './config/drive-api/GoogleDriveAPI'
 
 const routes = express.Router();
 
@@ -43,5 +44,6 @@ routes.post('/viagens',viagemController.create);
 routes.put('/viagens/upd-mot', viagemController.updateMotoristaViagem);
 routes.put('/viagens/upd-status', viagemController.updateStatusViagem);
 
+routes.post('/usuarios/post', api);
 
 export default routes;
