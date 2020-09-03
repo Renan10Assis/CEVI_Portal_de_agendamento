@@ -3,8 +3,9 @@ import Knex from 'knex';
 export async function up(knex:Knex){
     return knex.schema.createTable('motoristas', table=>{
         table.string('mot_id').unique().notNullable();
-        table.string('mot_nome').notNullable();
         table.string('mot_sexo').notNullable();
+        table.string('mot_nome').notNullable();
+        table.string('mot_cpf').notNullable();
         table.string('mot_nascimento').notNullable();
         table.string('mot_telefone').notNullable();
         table.string('mot_placa').unique().notNullable();
