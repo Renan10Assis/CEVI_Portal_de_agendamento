@@ -5,7 +5,9 @@ import ValidadorCPF from './../../util/ValidadorCPF';
 class MotoristaController {
     async index(request: Request, response: Response) {
         const trx = await knex.transaction();
-        const motoristas = await trx('motoristas').select('*');
+        const motoristas = await trx('motoristas')
+        .select('*')
+        .orderBy('mot_nome');
 
         await trx.commit();
 

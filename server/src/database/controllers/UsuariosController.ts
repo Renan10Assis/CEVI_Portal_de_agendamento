@@ -2,14 +2,16 @@ import { Request, Response } from 'express';
 import ValidadorEmail from '../../util/ValidadorEmail';
 import knex from '../connection';
 import bcrypt from "bcrypt";
+import Gdrive from '../../drive-api/Gdrive';
 
 class UsuariosController {
     async index(request: Request, response: Response) {
         const trx = await knex.transaction()
-
+        
         const users = await trx('usuarios')
             //.join('empresas', 'emp_id', 'usu_emp_id')
-            .select('*');
+            .select('*')
+            .orderBy('usu_nome');
 
         await trx.commit();
         return response.json(users);
@@ -26,7 +28,7 @@ class UsuariosController {
             usu_senha,
             usu_emp_id,
             usu_tipo,
-            usu_status
+            usu_status,
         } = request.body;
 
         const userOBJ = {
@@ -36,7 +38,8 @@ class UsuariosController {
             usu_senha: await bcrypt.hash(String(usu_senha), saltRounds),
             usu_emp_id,
             usu_tipo,
-            usu_status
+            usu_status,
+            usu_imagem:request.file.filename
         };
 
         if (emailValido.validaremail(usu_email)) {
@@ -117,6 +120,20 @@ class UsuariosController {
 
         return response.json(resposta);
 
+    }
+    async updateProfileImage(request:Request, response:Response){
+        const gdrive = new Gdrive();
+        const trx = await knex.transaction();
+        const usu_imagem = request.file.filename;
+        const {usu_id} = request.body;
+
+        const a = gdrive.imageUpload(request.file.filename);
+        /* await trx('usuarios').where('usu_id', usu_id).update({usu_imagem});
+
+        await trx.commit(); */
+        
+
+        return response.json({success: 'Imagem de perfil atualizada com sucesso!'});
     }
 
     async updateEmail(request: Request, response: Response) {
