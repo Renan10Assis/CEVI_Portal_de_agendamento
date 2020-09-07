@@ -9,7 +9,7 @@ class MotoristaController {
         .select('*')
         .orderBy('mot_nome');
 
-        await trx.commit();
+        await trx.commit().catch(err=>(console.log(err)));
 
         return response.json(motoristas);
 
@@ -59,7 +59,7 @@ class MotoristaController {
                 const mot = await trx('motoristas').where('mot_id', mot_id).select('*');
                 res = mot[0];
             }
-            await trx.commit();
+            await trx.commit().catch(err=>(console.log(err)));
         } else {
             res = { erro: 'CPF inválido!' };
         }
@@ -105,7 +105,7 @@ class MotoristaController {
             res = { erro: 'ID não localizado!' };
         }
 
-        await trx.commit();
+        await trx.commit().catch(err=>(console.log(err)));
 
         return response.json(res);
 

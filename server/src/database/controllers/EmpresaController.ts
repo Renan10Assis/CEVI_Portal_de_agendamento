@@ -7,7 +7,7 @@ class EmpresaController{
         const trx = await knex.transaction();
         const empresas = await trx('empresas').select('*');
 
-        await trx.commit();
+        await trx.commit().catch(err=>(console.log(err)));
 
         return response.json(empresas);
     }
@@ -15,14 +15,14 @@ class EmpresaController{
     async create(request:Request, response:Response){
         const{
             emp_id,
-            emp_razaoSoc,
+            emp_nomeFantasia,
             emp_cnpj,
             emp_endereco
         } = request.body;
 
         const objEmp = {
             emp_id,
-            emp_razaoSoc,
+            emp_nomeFantasia,
             emp_cnpj,
             emp_endereco
         }
@@ -43,7 +43,7 @@ class EmpresaController{
             res = {erro: 'CNPJ inválido'}
         }
 
-        await trx.commit();
+        await trx.commit().catch(err=>(console.log(err)));
 
         return response.json(res);
 
@@ -52,7 +52,7 @@ class EmpresaController{
     async update(request:Request,response:Response){
         const{
             emp_id,
-            emp_razaoSoc,
+            emp_nomeFantasia,
             emp_endereco
         } = request.body;
 
@@ -62,7 +62,7 @@ class EmpresaController{
 
         if(existeID){
             await trx('empresas').where('emp_id', emp_id).update({
-                emp_razaoSoc,
+                emp_nomeFantasia,
                 emp_endereco
             });
             const emp = await trx('empresas').where('emp_id', emp_id).select('*');
@@ -71,7 +71,7 @@ class EmpresaController{
             res = {erro: 'ID não localizado!'};
         }
 
-        await trx.commit();
+        await trx.commit().catch(err=>(console.log(err)));
 
         return response.json(res);
 
