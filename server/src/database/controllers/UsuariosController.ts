@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import fs from 'fs';
 import ValidadorEmail from '../../util/ValidadorEmail';
 import knex from '../connection';
 import bcrypt from "bcrypt";
@@ -6,13 +7,13 @@ import bcrypt from "bcrypt";
 class UsuariosController {
     async index(request: Request, response: Response) {
         const trx = await knex.transaction()
-        
+
         const users = await trx('usuarios')
             .join('empresas', 'emp_id', 'usu_emp_id')
             .select('*')
             .orderBy('usu_nome');
 
-        await trx.commit().catch(err=>(console.log(err)));
+        await trx.commit().catch(err => (console.log(err)));
         return response.json(users);
     }
 
@@ -51,7 +52,7 @@ class UsuariosController {
                 await trx('usuarios').insert(userOBJ);
                 resposta = userOBJ;
             }
-            await trx.commit().catch(err=>(console.log(err)));
+            await trx.commit().catch(err => (console.log(err)));
             return response.json(resposta);
 
         } else {
@@ -91,7 +92,7 @@ class UsuariosController {
         } else {
             resposta = { erro: "ID não localizado." }
         }
-        await trx.commit().catch(err=>(console.log(err)));
+        await trx.commit().catch(err => (console.log(err)));
 
         return response.json(resposta);
 
@@ -114,22 +115,39 @@ class UsuariosController {
         } else {
             resposta = { erro: 'ID não localizado.' }
         }
-        await trx.commit().catch(err=>(console.log(err)));
+        await trx.commit().catch(err => (console.log(err)));
 
         return response.json(resposta);
 
     }
-    async updateProfileImage(request:Request, response:Response){
+    async updateProfileImage(request: Request, response: Response) {
         const trx = await knex.transaction();
-        const usu_imagem = request.file.filename;
-        const {usu_id} = request.body;
+        const usu_imagem = `http://localhost:3333/src/uploads/${request.file.filename}`;
+        const { usu_id } = request.body;
 
-        await trx('usuarios').where('usu_id', usu_id).update({usu_imagem});
+        let imgAntiga = await trx('usuarios').where('usu_id', usu_id).select('usu_imagem');
+        imgAntiga = imgAntiga[0].usu_imagem.replace('http://localhost:3333/src/uploads/', '');
+        if (imgAntiga) {
+            fs.stat(`./src/uploads/${imgAntiga}`, function (err, stats) {
+                console.log(stats);//informacao do arquivo
 
-        await trx.commit().catch(err=>(console.log(err)));
-        
+                err ?
+                    console.error(err)
+                    :
+                    fs.unlink(`./src/uploads/${imgAntiga}`, function (err) {
+                        if (err) return console.log(err);
+                        console.log('Imagem substituída com sucesso!');
+                    });
+            });
 
-        return response.json({success: 'Imagem de perfil atualizada com sucesso!'});
+        }
+
+        await trx('usuarios').where('usu_id', usu_id).update({ usu_imagem });
+
+        await trx.commit().catch(err => (console.log(err)));
+
+
+        return response.json({ success: 'Imagem de perfil atualizada com sucesso!' });
     }
 
     async updateEmail(request: Request, response: Response) {
@@ -153,10 +171,10 @@ class UsuariosController {
                     resposta = { success: "Email atualizado com sucesso!" };
                 }
             } else {
-                resposta = {erro: "Email not found!"};
+                resposta = { erro: "Email not found!" };
             }
-            
-            await trx.commit().catch(err=>(console.log(err)));
+
+            await trx.commit().catch(err => (console.log(err)));
         } else {
             resposta = { erro: "Formato de email inválido!" }
         }
@@ -186,7 +204,7 @@ class UsuariosController {
             resposta = { erro: 'Senha antiga não confere.' };
         }
 
-        await trx.commit().catch(err=>(console.log(err)));
+        await trx.commit().catch(err => (console.log(err)));
         return response.json(resposta);
 
     }
@@ -203,7 +221,7 @@ class UsuariosController {
         const trx = await knex.transaction();
         const user = await trx('usuarios').where('usu_email', usu_email).select('*');
 
-        await trx.commit().catch(err=>(console.log(err)));
+        await trx.commit().catch(err => (console.log(err)));
 
         if (String(user)) {
             await bcrypt.compare(usu_senha, user[0].usu_senha, function (err, res) {
