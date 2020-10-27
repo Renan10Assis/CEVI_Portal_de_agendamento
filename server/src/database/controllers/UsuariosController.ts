@@ -126,8 +126,8 @@ class UsuariosController {
         const { usu_id } = request.body;
 
         let imgAntiga = await trx('usuarios').where('usu_id', usu_id).select('usu_imagem');
-        imgAntiga = imgAntiga[0].usu_imagem.replace('http://localhost:3333/src/uploads/', '');
-        if (imgAntiga) {
+        if (imgAntiga[0].usu_imagem) {
+            imgAntiga = imgAntiga[0].usu_imagem.replace('http://localhost:3333/src/uploads/', '');
             fs.stat(`./src/uploads/${imgAntiga}`, function (err, stats) {
                 console.log(stats);//informacao do arquivo
 
