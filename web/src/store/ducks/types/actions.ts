@@ -6,24 +6,23 @@ import {Viagem} from './Viagem';
 
 
 //empresa - types
-export const INDEX_EMPRESA = 'INDEX_EMPRESA';
+export const SET_EMPRESAS = 'SET_EMPRESAS';
 export const CREATE_EMPRESA = 'CREATE_EMPRESA';
 export const UPDATE_EMPRESA = 'UPDATE_EMPRESA';
 
 
 //endereco - types
-export const INDEX_ENDERECO = 'INDEX_ENDERECO';
-export const SHOW_ENDERECO = 'SHOW_ENDERECO';
+export const SET_ENDERECOS = 'SET_ENDERECOS';
 export const CREATE_ENDERECO = 'CREATE_ENDERECO';
 export const DELETE_ENDERECO = 'DELETE_ENDERECO';
 
 //Motorista - types
-export const INDEX_MOTORISTA = 'INDEX_MOTORISTA';
+export const SET_MOTORISTAS = 'SET_MOTORISTAS';
 export const CREATE_MOTORISTA = 'CREATE_MOTORISTA';
 export const UPDATE_MOTORISTA = 'UPDATE_MOTORISTA';
 
 //Usuário - types
-export const INDEX_USUARIO = 'INDEX_USUARIO';
+export const SET_USUARIOS= 'SET_USUARIOS';
 export const CREATE_USUARIO = 'CREATE_USUARIO';
 export const AUTH_USUARIO = 'AUTH_USUARIO';
 export const UPDATE_USUARIO = 'UPDATE_USUARIO';
@@ -33,8 +32,7 @@ export const UPDATE_EMAIL_USUARIO = 'UPDATE_EMAIL_USUARIO';
 export const DELETE_USUARIO = 'DELETE_USUARIO';
 
 //Viagem - types
-export const INDEX_VIAGEM = 'INDEX_VIAGEM';
-export const SHOW_VIAGEM = 'SHOW_VIAGEM';
+export const SET_VIAGENS = 'SET_VIAGENS';
 export const CREATE_VIAGEM = 'CREATE_VIAGEM';
 export const UPDATE_MOT_VIAGEM = 'UPDATE_MOT_VIAGEM';
 export const UPDATE_STATUS_VIAGEM = 'UPDATE_STATUS_VIAGEM';
@@ -44,137 +42,132 @@ export const UPDATE_STATUS_VIAGEM = 'UPDATE_STATUS_VIAGEM';
 //---------------------------------- ACTION TYPES -----------------------------
 
 // Empresa -------------------------------
-export interface indexEmpresa{
-    type: typeof INDEX_EMPRESA;
-    data: Empresa[];
+export interface SetEmpresasAction{
+    type: typeof SET_EMPRESAS;
+    empresas: Empresa[];
 }
 
-export interface createEmpresa{
+export interface createEmpresasAction{
     type: typeof CREATE_EMPRESA;
     data: Empresa;
 }
 
-export interface updateEmpresa{
+export interface updateEmpresaAction{
     type: typeof UPDATE_EMPRESA;
     data: Empresa;
 }
 
-export type EmpresaActionTypes = indexEmpresa | createEmpresa | updateEmpresa
+export type EmpresaActionTypes = SetEmpresasAction | createEmpresasAction | updateEmpresaAction
 
 
 
 //Endereco -------------------------------
-export interface indexEndereco{
-    type: typeof INDEX_ENDERECO;
-    data:Endereco[];
+export interface SetEnderecosAction{
+    type: typeof SET_ENDERECOS;
+    enderecos:Endereco[];
 }
 
-export interface showEndereco{
-    type: typeof SHOW_ENDERECO;
-    data: Endereco[];
+export interface createEnderecoAction{
+    type: typeof CREATE_ENDERECO;
+    data: Endereco;
 }
 
-export interface deleteEndereco{
+export interface deleteEnderecoAction{
     type: typeof DELETE_ENDERECO;
     end_id: string;
 }
 
-export type EnderecoActionTypes = indexEndereco | showEndereco | deleteEndereco
+export type EnderecoActionTypes = SetEnderecosAction | createEnderecoAction | deleteEnderecoAction
 
 
 
 //Motorista --------------------------------
-export interface indexMotorista{
-    type: typeof INDEX_MOTORISTA; 
-    data: Motorista[];
+export interface SetMotoristasAction{
+    type: typeof SET_MOTORISTAS; 
+    motoristas: Motorista[];
 }
 
-export interface createMotorista{
+export interface createMotoristaAction{
     type: typeof CREATE_MOTORISTA;
     data: Motorista;
 }
 
-export interface updateMotorista{
+export interface updateMotoristaAction{
     type: typeof UPDATE_MOTORISTA;
-    mot_id: string;
+    data: Motorista;
 }
 
-export type MotoristaActionTypes = indexMotorista | createMotorista | updateMotorista
+export type MotoristaActionTypes = SetMotoristasAction | createMotoristaAction | updateMotoristaAction
 
 
 
 //Usuario ----------------------------------
-export interface indexUsuario{
-    type: typeof INDEX_USUARIO;
-    data: Usuario[];
+export interface SetUsuariosAction{
+    type: typeof SET_USUARIOS;
+    usuarios: Usuario[];
 }
 
-export interface createUsuario{
+export interface createUsuarioAction{
     type: typeof CREATE_USUARIO;
     data: Usuario;
 }
 
-export interface authUsuario{
+export interface authUsuarioAction{
     type: typeof AUTH_USUARIO;
     data: Usuario;
 }
 
-export interface updateUsuario{
+export interface updateUsuarioAction{
     type: typeof UPDATE_USUARIO;
-    usu_id: string;
+    data: Usuario;
 }
 
-export interface updateImageUsuario{
+export interface updateImageUsuarioAction{
     type: typeof UPDATE_IMAGE_USUARIO;
-    usu_img: string;
+    data: Usuario;
 }
 
-export interface updateSenhaUsuario{
+export interface updateSenhaUsuarioAction{
     type:typeof UPDATE_SENHA_USUARIO;
-    usu_senha: string;
+    data: Usuario;
 }
 
-export interface updateEmailUsuario{
+export interface updateEmailUsuarioAction{
     type: typeof UPDATE_EMAIL_USUARIO;
-    usu_email: string;
+    data: Usuario;
 }
 
-export interface deleteUsuario{
+export interface deleteUsuarioAction{
     type: typeof DELETE_USUARIO;
     usu_id: string;
 }
 
-export type UsuarioActionTypes = indexUsuario | createUsuario | authUsuario | updateUsuario | updateImageUsuario | updateSenhaUsuario | updateEmailUsuario | deleteUsuario
+export type UsuarioActionTypes = SetUsuariosAction | createUsuarioAction | authUsuarioAction | updateUsuarioAction | updateImageUsuarioAction | updateSenhaUsuarioAction | updateEmailUsuarioAction | deleteUsuarioAction
 
 
 
 // Viagem ---------------------------------------
-export interface indexViagem{
-    type: typeof INDEX_VIAGEM;
-    data: Viagem[];
+export interface SetViagensAction{
+    type: typeof SET_VIAGENS;
+    viagens: Viagem[];
 }
 
-export interface showViagem{
-    type: typeof SHOW_VIAGEM;
-    data: Viagem[];
-}
-
-export interface createViagem{
+export interface createViagemAction{
     type: typeof CREATE_VIAGEM;
     data: Viagem;
 }
 
-export interface updateMotViagem{
+export interface updateMotViagemAction{
     type: typeof UPDATE_MOT_VIAGEM;
-    mot_id: string;
+    data: Viagem;
 }
 
-export interface updateStatusViagem{
+export interface updateStatusViagemAction{
     type: typeof UPDATE_STATUS_VIAGEM;
-    via_os: string;
+    data: Viagem;
 }
 
-export type ViagemActionTypes = indexViagem | showViagem | createViagem | updateMotViagem | updateStatusViagem
+export type ViagemActionTypes = SetViagensAction | createViagemAction | updateMotViagemAction | updateStatusViagemAction
 
 
 //---- Unindo todas as Action Types de todas das classes ----
