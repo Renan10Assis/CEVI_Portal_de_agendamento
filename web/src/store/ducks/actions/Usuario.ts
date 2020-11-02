@@ -14,10 +14,6 @@ export const createUsuario = (data:Usuario):AppActions =>({
     data
 });
 
-export const authUsuario = (data: Usuario):AppActions =>({
-    type: "AUTH_USUARIO",
-    data
-});
 
 export const updateUsuario = (data:Usuario): AppActions =>({
     type: "UPDATE_USUARIO",
@@ -118,8 +114,3 @@ export const startDeleteUsuario = (usu_id: string) => {
     };
 };
 
-export const startAuthUsuario = (data: Usuario) => {
-    return (dispatch: Dispatch<AppActions>, getState: () => AppState) => {
-        dispatch(authUsuario(data));
-    };
-};

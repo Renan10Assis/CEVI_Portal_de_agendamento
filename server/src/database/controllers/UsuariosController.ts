@@ -219,7 +219,7 @@ class UsuariosController {
 
 
         const trx = await knex.transaction();
-        const user = await trx('usuarios').where('usu_email', usu_email).select('*');
+        const user = await trx('usuarios').join('empresas','emp_id','usu_emp_id').where('usu_email', usu_email).select('usu_id','usu_nome', 'usu_email','usu_senha', 'usu_tipo', 'usu_imagem','emp_id','emp_nomeFantasia');
 
         await trx.commit().catch(err => (console.log(err)));
 
@@ -228,12 +228,12 @@ class UsuariosController {
                 if (res) {
                     return response.json(user[0]);
                 } else {
-                    return response.json({ erro: 'Invalid Password!' })
+                    return response.json('Senha inválida!')
                 }
             });
 
         } else {
-            return response.json({ erro: 'User not found!' })
+            return response.json('Usuário não encontrado!')
         }
 
     }

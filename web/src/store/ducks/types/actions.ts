@@ -2,6 +2,7 @@ import {Empresa} from './Empresa';
 import {Endereco} from './Endereco';
 import {Motorista} from './Motorista';
 import {Usuario} from './Usuario';
+import {AuthUsuario} from './AuthUsuario';
 import {Viagem} from './Viagem';
 
 
@@ -24,7 +25,10 @@ export const UPDATE_MOTORISTA = 'UPDATE_MOTORISTA';
 //Usuário - types
 export const SET_USUARIOS= 'SET_USUARIOS';
 export const CREATE_USUARIO = 'CREATE_USUARIO';
+
 export const AUTH_USUARIO = 'AUTH_USUARIO';
+export const LOGOUT_USUARIO = 'LOGOUT_USUARIO';
+
 export const UPDATE_USUARIO = 'UPDATE_USUARIO';
 export const UPDATE_IMAGE_USUARIO = 'UPDATE_IMAGE_USUARIO';
 export const UPDATE_SENHA_USUARIO = 'UPDATE_SENHA_USUARIO';
@@ -114,7 +118,10 @@ export interface createUsuarioAction{
 
 export interface authUsuarioAction{
     type: typeof AUTH_USUARIO;
-    data: Usuario;
+    data: AuthUsuario;
+}
+export interface logoutUsuarioAction{
+    type: typeof LOGOUT_USUARIO;
 }
 
 export interface updateUsuarioAction{
@@ -142,7 +149,7 @@ export interface deleteUsuarioAction{
     usu_id: string;
 }
 
-export type UsuarioActionTypes = SetUsuariosAction | createUsuarioAction | authUsuarioAction | updateUsuarioAction | updateImageUsuarioAction | updateSenhaUsuarioAction | updateEmailUsuarioAction | deleteUsuarioAction
+export type UsuarioActionTypes = SetUsuariosAction | createUsuarioAction | authUsuarioAction | logoutUsuarioAction | updateUsuarioAction | updateImageUsuarioAction | updateSenhaUsuarioAction | updateEmailUsuarioAction | deleteUsuarioAction
 
 
 

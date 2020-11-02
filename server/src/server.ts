@@ -5,7 +5,8 @@ import path from 'path';
 
 const app = express();
 app.use((req: Request,res:Response,next) =>{
-    res.header('Access-Control-Allow-Origin',"*");
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");;
     app.use(cors());
     app.use('/src/uploads', express.static(path.resolve(__dirname,'uploads')));
