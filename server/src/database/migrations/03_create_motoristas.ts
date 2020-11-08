@@ -9,6 +9,7 @@ export async function up(knex:Knex){
         table.string('mot_nascimento').notNullable();
         table.string('mot_telefone').notNullable();
         table.string('mot_placa').unique().notNullable();
+        table.string('mot_marca').notNullable();
         table.string('mot_modelo').notNullable();
         table.string('mot_anoModelo').notNullable();
         table.string('mot_numeroViatura').notNullable();

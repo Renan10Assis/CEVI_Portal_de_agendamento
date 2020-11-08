@@ -1,31 +1,33 @@
-import React from 'react';
+import React, { useEffect, memo } from 'react';
 import './styles.css';
-import { useSelector } from 'react-redux';
 import InputLogin from '../../components/InputLogin';
-import { AppState } from '../../store/index';
 import home_image2 from '../../assets/home_image2.jpg';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../store';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Home = () => {
-    const authUserState = useSelector((state: AppState) => state.authUsuarios);
 
-    const redirecionar = () => {
-        let gif = document.createElement("div");
-        gif.setAttribute("style", "width:30%; height:5vh;background:#ccc");
-        setTimeout(() => {
-            if (authUserState.usu_id !== "") {
-                window.location.replace("/Main")
-            }
-        }, 2000);
-    }
+    const authState = useSelector((state: AppState) => state.authUsuarios);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (authState.isLogged) {
+            setTimeout(() => {
+                navigate("/main");
+            }, 2000);
+        } 
+    });
+
 
     return (
         <div id="container">
-            {redirecionar()}
-
             <div id="left-container">
                 <div id="logo-container">
-                    <h1>CEVI</h1>
-                    <h2>Portal de Agendamento</h2>
+                    <h1 id="logo-lbl">CEVI</h1>
+                    <h2 id="slogan-lbl">Portal de Agendamento</h2>
                 </div>
 
                 <div id="input-container" >
@@ -35,7 +37,7 @@ const Home = () => {
             </div>
 
             <div id="right-container">
-                <img src={home_image2} alt="imagem home" />
+                <img id="image-home" src={home_image2} alt="imagem home" />
             </div>
 
         </div>
@@ -46,4 +48,4 @@ const Home = () => {
 
 }
 
-export default Home;
+export default memo(Home);

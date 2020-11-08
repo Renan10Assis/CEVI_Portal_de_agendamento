@@ -15,7 +15,7 @@
     float: left;
     width: 100%;
     text-align: center;
-    margin-top: 20%;
+    padding-top: 5%;
 }
 
 #input-container{
@@ -33,20 +33,21 @@
     height: 100vh;
     background-size: cover;
 }
-img{
+#image-home{
     width: 100%;
     height: 100%;
 
 }
 
-h1{
+#logo-lbl{
     color: #B98602;
     text-transform: uppercase;
     font-size: 2.5em;
 }
-h2{
+#slogan-lbl{
     color: #f2f2f2;
     text-transform: uppercase;
     font-size: 1.5em;
+    
 
 }

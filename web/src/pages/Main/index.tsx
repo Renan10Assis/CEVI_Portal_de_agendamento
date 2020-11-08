@@ -1,25 +1,46 @@
-import React, { useEffect } from 'react';
-import api from '../../services/api';
+import React, {useEffect} from 'react';
 import './styles.css';
-import { useDispatch } from 'react-redux';
-
-
+/* import { useDispatch, useSelector } from 'react-redux';
+import { AppState } from '../../store/index'; */
+import Header from '../../components/Header';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../store';
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
-    const dispatch = useDispatch();
+
+    const authState = useSelector((state:AppState)=>state.authUsuarios);
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(!authState.isLogged){
+            console.log(localStorage.getItem("auth_user"));
+           alert("Você foi desconectado! Sessão expirou!");
+           navigate("/");
+        }
+
+    });
 
 
     return (
-        <div id="content">
-            <header>
-               
+        <div id="container">
+            <header id="main-header">
+                <Header />
             </header>
 
-            <main>
-               
+            <div id="menu-container">
+
+            </div>
+
+            <main id="main-main">
+
             </main>
 
-            <footer>
+            <div id="painel-container">
+
+            </div>
+
+            <footer id="main-footer">
 
             </footer>
 
@@ -32,3 +53,5 @@ const Main = () => {
 }
 
 export default Main;
+
+

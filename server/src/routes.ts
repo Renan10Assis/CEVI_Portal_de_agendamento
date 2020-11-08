@@ -21,6 +21,7 @@ const viagemController = new ViagemController();
 routes.get('/usuarios', usuariosController.index);
 routes.post('/usuarios', upload.single('usu_imagem') ,usuariosController.create);
 routes.post('/usuarios/auth', usuariosController.authUser);
+routes.post('/usuarios/auto-auth', usuariosController.autoAuthUser);
 routes.put('/usuarios/put', upload.single('usu_imagem'),usuariosController.updateProfileImage);
 routes.put('/usuarios/setpwd', usuariosController.updateSenha);
 routes.put('/usuarios/seteml', usuariosController.updateEmail);

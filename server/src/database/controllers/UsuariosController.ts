@@ -3,6 +3,8 @@ import fs from 'fs';
 import ValidadorEmail from '../../util/ValidadorEmail';
 import knex from '../connection';
 import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
+import { JWT_KEY } from '../../config/authConfig'
 
 class UsuariosController {
     async index(request: Request, response: Response) {
@@ -219,24 +221,74 @@ class UsuariosController {
 
 
         const trx = await knex.transaction();
-        const user = await trx('usuarios').join('empresas','emp_id','usu_emp_id').where('usu_email', usu_email).select('usu_id','usu_nome', 'usu_email','usu_senha', 'usu_tipo', 'usu_imagem','emp_id','emp_nomeFantasia');
-
+        const user = await trx('usuarios').join('empresas', 'emp_id', 'usu_emp_id').where('usu_email', usu_email).select('usu_id', 'usu_nome', 'usu_email', 'usu_senha', 'usu_tipo', 'usu_imagem', 'emp_id', 'emp_nomeFantasia');
         await trx.commit().catch(err => (console.log(err)));
+
 
         if (String(user)) {
             await bcrypt.compare(usu_senha, user[0].usu_senha, function (err, res) {
                 if (res) {
-                    return response.json(user[0]);
+                    let token = jwt.sign(user[0],
+                        JWT_KEY,
+                        {
+                            expiresIn: "1m"
+                        });
+                    
+                    return response.json({
+                        mensagem: "Autenticado com sucesso",
+                        data: {
+                            token: token,
+			    isLogged: true,
+                            user: {
+                                usu_id: user[0].usu_id,
+                                usu_nome: user[0].usu_nome,
+                                usu_email: user[0].usu_email,
+                                usu_tipo: user[0].usu_tipo,
+                                usu_imagem: user[0].usu_imagem,
+                                emp_id: user[0].emp_id,
+                                emp_nomeFantasia: user[0].emp_nomeFantasia,
+                            }
+                        }
+                    });
                 } else {
-                    return response.json('Senha inválida!')
+                    return response.json({ mensagem: 'Falha na autenticação!', user:""})
                 }
             });
 
         } else {
-            return response.json('Usuário não encontrado!')
+            return response.json({ mensagem: 'Falha na autenticação!', user:"" })
         }
 
+
     }
+
+    async autoAuthUser(request: Request, response: Response) {
+        const {
+            token
+        } = request.body;
+
+
+        jwt.verify(token, JWT_KEY, (err: any) => {
+            if (err) {
+                return response.json({
+                    mensagem: "Sessão expirou!",
+                    isLogged: false,
+		    
+                    
+                });
+            }else{
+                return response.json({
+                    mensagem: "Usuário está logado!",
+                    isLogged: true
+                });
+
+            }
+        });
+
+
+    }
+
+
 
 }
 

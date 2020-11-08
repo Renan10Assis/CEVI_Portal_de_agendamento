@@ -1,0 +1,50 @@
+#container{
+    width: 100%;
+    height: 100%;
+}
+
+#user-info{
+    height: 100%;
+    width: 90%;
+    float: left;
+}
+
+#profile-image{
+    height: 100%;
+    width: 10%;
+    float: left;
+}
+
+.label-user{
+    float: right;
+    margin-top: 5%;
+}
+
+
+#image-user{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #272727;
+    border-radius: 30px;
+    float: right;
+    margin-top: 15%;
+    margin-right: 10%;
+
+}
+
+#image-user:hover{
+    border-color: #f2f2f2;
+}
+
+
+#profile-options{
+    width: 100px;
+    height: 50px;
+    background-color: #272727;
+    position: relative;
+    visibility: hidden;
+}
+
+#profile-options:out-of-range{
+    visibility: hidden;
+}

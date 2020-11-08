@@ -6,6 +6,7 @@ export async function up(knex:Knex){
         table.string('via_usu_id').notNullable().references('usu_id').inTable('usuarios');
         table.string('via_emp_id').notNullable().references('emp_id').inTable('empresas');
         table.string('via_mot_id').references('mot_id').inTable('motoristas');
+        table.string('via_nomePassageiro').notNullable();
         table.string('via_telPassageiro').notNullable();
         table.string('via_end_origem');
         table.string('via_end_destino');
