@@ -5,12 +5,14 @@ import {enderecosReducer} from './ducks/reducers/Endereco';
 import {motoristasReducer} from './ducks/reducers/Motorista';
 import {usuariosReducer} from './ducks/reducers/Usuario';
 import {authUsuarioReducer} from './ducks/reducers/AuthUsuario';
+import {navigationReducer} from './ducks/reducers/Navigation';
 import {viagensReducer} from './ducks/reducers/Viagem';
 import { AppActions } from './ducks/types/actions';
 
 
 
 const rootReducer = combineReducers({
+    navigation: navigationReducer,
     empresas: empresasReducer,
     enderecos: enderecosReducer,
     motoristas: motoristasReducer,

@@ -12,18 +12,19 @@ const Home = () => {
 
     const authState = useSelector((state: AppState) => state.authUsuarios);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         if (authState.isLogged) {
+            document.getElementById('container')?.setAttribute("style","cursor:none");
             setTimeout(() => {
                 navigate("/main");
-            }, 2000);
+            }, 1000);
         } 
     });
 
 
     return (
-        <div id="container">
+        <div id="home-container">
             <div id="left-container">
                 <div id="logo-container">
                     <h1 id="logo-lbl">CEVI</h1>

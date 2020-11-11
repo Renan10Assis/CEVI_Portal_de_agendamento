@@ -4,6 +4,7 @@ import {Motorista} from './Motorista';
 import {Usuario} from './Usuario';
 import {AuthUsuario} from './AuthUsuario';
 import {Viagem} from './Viagem';
+import { Navigation } from './Navigation';
 
 
 //empresa - types
@@ -41,6 +42,9 @@ export const CREATE_VIAGEM = 'CREATE_VIAGEM';
 export const UPDATE_MOT_VIAGEM = 'UPDATE_MOT_VIAGEM';
 export const UPDATE_STATUS_VIAGEM = 'UPDATE_STATUS_VIAGEM';
 
+//Navigation - types
+export const SET_NAVIGATION = 'SET_NAVIGATION';
+export const REMOVE_NAVIGATION = 'REMOVE_NAVIGATION';
 
 
 //---------------------------------- ACTION TYPES -----------------------------
@@ -177,5 +181,19 @@ export interface updateStatusViagemAction{
 export type ViagemActionTypes = SetViagensAction | createViagemAction | updateMotViagemAction | updateStatusViagemAction
 
 
+
+//---Navigation action types
+export interface setNavigation{
+    type: typeof SET_NAVIGATION,
+    data: Navigation
+}
+
+export interface removeNavigation{
+    type: typeof REMOVE_NAVIGATION,
+}
+
+export type NavigationActionTypes = setNavigation | removeNavigation
+
+
 //---- Unindo todas as Action Types de todas das classes ----
-export type AppActions = EmpresaActionTypes | EnderecoActionTypes | MotoristaActionTypes | UsuarioActionTypes | ViagemActionTypes
+export type AppActions = NavigationActionTypes | EmpresaActionTypes | EnderecoActionTypes | MotoristaActionTypes | UsuarioActionTypes | ViagemActionTypes

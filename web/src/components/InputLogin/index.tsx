@@ -89,7 +89,7 @@ const InputLogin = () => {
 
 
     return (
-        <div id="content">
+        <div id="content-inp-login">
             <span id="msg-erro">{respMsg}</span>
             <form onSubmit={handleSubmit}>
                 <input placeholder="Digite seu E-mail" className="input-login" onChange={handleUsuEmailChange} type="text" />

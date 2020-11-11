@@ -1,0 +1,16 @@
+.viagem-data{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: lemonchiffon;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(233, 220, 110);
+}
+
+.viagem-span{
+    float: left;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+    font-size: 0.8em;
+    color: #272727;
+}

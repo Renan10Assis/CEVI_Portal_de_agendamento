@@ -1,4 +1,4 @@
-#container{  
+#main-container{  
     height: 100vh;
     width: 100%;
 }
@@ -7,6 +7,7 @@
     width: 100%;
     height: 10vh;
     float: left;
+    
 }
 
 #menu-container{
@@ -25,12 +26,22 @@
     float: left;
     width: 30%;
     height: 70vh;
-    background-color: mediumblue;
 }
 
 #main-footer{
     width: 100%;
     height: 20vh;
-    background-color: lightseagreen;
     float: left;
+}
+.options_visible{
+    float: right;
+    visibility: inherit;
+    width: 16vh;
+    height: 7vh;
+    background-color: #272727;
+    border-bottom-left-radius: 2vh;
+}
+
+.options_hidden{
+    visibility: hidden;
 }
