@@ -1,49 +1,82 @@
-import React from 'react';
+import React, { MouseEvent, useEffect, useState, memo } from 'react';
 import { AppState } from '../../store/index';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
-
-interface ViagemProps {
-    via_os: number;
-    via_usu_id: string;
-    via_emp_id: string;
-    via_telPassageiro: string;
-    via_end_origem: string;
-    via_end_destino: string;
-    via_dataHora_solicitacao: string;
-    via_dataHora_embarque: string;
-    via_observacao: string;
-    via_mot_id: string;
-    via_status: string;
+import { Viagem } from "../../store/ducks/types/Viagem";
+import { Motorista } from '../../store/ducks/types/Motorista';
+import { startSetNavigation } from '../../store/ducks/actions/Navigation';
 
 
-}
 
 
-const ViagemGridData: React.FC<ViagemProps> = (props) => {
+const ViagemGridData: React.FC<Viagem> = (props) => {
+    const motoristaState = useSelector((state: AppState) => state.motoristas);
+    const navigationState = useSelector((state: AppState) => state.navigation);
+    const dispatch = useDispatch();
+
+    const viagemProp: Viagem = props;
+
+    const initialMotState = {
+        mot_id: "",
+        mot_nome: "",
+        mot_sexo: "",
+        mot_cpf: "",
+        mot_nascimento: "",
+        mot_telefone: "",
+        mot_marca: "",
+        mot_modelo: "",
+        mot_anoModelo: "",
+        mot_cor: "",
+        mot_placa: "",
+        mot_numeroViatura: "",
+        mot_status: ""
+    }
+    const [motorista, setMotorista] = useState<Motorista>(initialMotState);
+
+
+    useEffect(() => {
+        if (viagemProp.via_mot_id) {
+
+            motoristaState.map(mot => {
+                if (mot.mot_id === viagemProp.via_mot_id) {
+                    setMotorista(mot);
+                }
+
+            });
+        } else {
+            setMotorista(initialMotState);
+        }
+    }, [motoristaState]);
+
+
+    function handleViewDetails(action: MouseEvent<HTMLDivElement>) {
+        let newNavState = navigationState;
+        newNavState.viagemOSClicked = props.via_os;
+        dispatch(startSetNavigation(newNavState));
+    }
+
 
 
     return (
-        <div className="viagem-data">
+        <div id="grid-container">
 
-            <form key={props.via_os}>
 
-                <span className="viagem-span">{props.via_os}</span>
-                <span className="viagem-span">{props.via_usu_id}</span>
-                <span className="viagem-span">{props.via_emp_id}</span>
-                <span className="viagem-span">{props.via_telPassageiro}</span>
-                <span className="viagem-span">{props.via_end_origem}</span>
-                <span className="viagem-span">{props.via_end_destino}</span>
-                <span className="viagem-span">{props.via_dataHora_solicitacao}</span>
-                <span className="viagem-span">{props.via_dataHora_embarque}</span>
-                <span className="viagem-span">{props.via_observacao}</span>
-                <span className="viagem-span">{props.via_mot_id}</span>
-                <span className="viagem-span">{props.via_status}</span>
-                <button className="btn-edit-viagem">Editar</button>
-            </form>
+            <div className={navigationState.viagemOSClicked ? "grid-read-hidden" : "grid-read"} onClick={handleViewDetails}>
+
+                <span className="rotulo_os">{viagemProp.via_os}</span>
+                <span className="rotulo_dtSol">{viagemProp.via_dataHora_solicitacao}</span>
+                <span className="rotulo_sol">{viagemProp.solicitante} - {viagemProp.empresa_solicitante}</span>
+                <span className="rotulo_nomePass">{viagemProp.via_nomePassageiro}</span>
+                <span className="rotulo_telPass">{viagemProp.via_telPassageiro}</span>
+                <span className="rotulo_emp">{viagemProp.empresa_viagem}</span>
+                <span className="rotulo_dtEmb">{viagemProp.via_dataHora_embarque}</span>
+                <span className="rotulo_mot">{motorista.mot_nome}</span>
+                <span className="rotulo_status">{viagemProp.via_status}</span>
+            </div>
+
         </div>
     );
 
 }
 
-export default ViagemGridData;
+export default memo(ViagemGridData);

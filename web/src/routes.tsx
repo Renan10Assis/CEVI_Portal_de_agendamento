@@ -4,13 +4,30 @@ import { Routes, Route, BrowserRouter as Router, Navigate } from 'react-router-d
 import { IsAuthenticated } from './IsAuthenticated';
 import Home from './pages/Home';
 import Main from './pages/Main';
+import CadastroUsuario from './pages/CadastroUsuario';
 import { AppState } from './store';
+import CadastroMotorista from './pages/CadastroMotorista';
 
 const PrivateRoute = ({ ...rest }) => {
     IsAuthenticated();
     const userState = useSelector((state: AppState) => state.authUsuarios);
     return (
         userState.isLogged ? <Route element={<Main />} /> : <Navigate to="/" />
+    );
+}
+
+const PrivateRoute2 = ({ ...rest }) => {
+    IsAuthenticated();
+    const userState = useSelector((state: AppState) => state.authUsuarios);
+    return (
+        userState.isLogged && userState.user.usu_tipo.toLowerCase()==="administrador" ? <Route element={<CadastroUsuario/>} /> : <Navigate to="/" />
+    );
+}
+const PrivateRoute3 = ({ ...rest }) => {
+    IsAuthenticated();
+    const userState = useSelector((state: AppState) => state.authUsuarios);
+    return (
+        userState.isLogged && userState.user.usu_tipo.toLowerCase()==="administrador" ? <Route element={<CadastroMotorista/>} /> : <Navigate to="/" />
     );
 }
 
@@ -27,6 +44,8 @@ const MainRoutes = () => {
                 </Route>
 
                 <PrivateRoute path="/main" />
+                <PrivateRoute2 path="/cadastros-usuarios" />
+                <PrivateRoute3 path="/cadastros-motoristas" />
 
 
                 <Route path="/*" element={

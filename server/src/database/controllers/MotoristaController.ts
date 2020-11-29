@@ -76,6 +76,8 @@ class MotoristaController {
             mot_nome,
             mot_telefone,
             mot_placa,
+	    mot_nascimento,
+	    mot_sexo,
             mot_marca,
             mot_modelo,
             mot_anoModelo,
@@ -86,6 +88,8 @@ class MotoristaController {
 
         const objMotorista = {
             mot_nome,
+	    mot_nascimento,
+	    mot_sexo,
             mot_telefone,
             mot_placa,
             mot_marca,

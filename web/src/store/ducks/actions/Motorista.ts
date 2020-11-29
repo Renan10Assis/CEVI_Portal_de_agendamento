@@ -38,6 +38,7 @@ export const startCreateMotorista = (motoristaData: {
     mot_nascimento:string;
     mot_telefone:string;
     mot_placa: string;
+    mot_marca: string;
     mot_modelo: string;
     mot_anoModelo: string;
     mot_numeroViatura:string;
@@ -53,13 +54,14 @@ export const startCreateMotorista = (motoristaData: {
             mot_nascimento= "",
             mot_telefone= "",
             mot_placa= "",
+            mot_marca= "",
             mot_modelo= "",
             mot_anoModelo= "",
             mot_numeroViatura= "",
             mot_cor= "",
             mot_status= ""
         } = motoristaData;
-        const motorista = { mot_id, mot_sexo, mot_nome, mot_cpf, mot_nascimento, mot_telefone, mot_placa, mot_modelo, mot_anoModelo, mot_numeroViatura, mot_cor, mot_status};
+        const motorista = { mot_id, mot_sexo, mot_nome, mot_cpf, mot_nascimento, mot_telefone, mot_placa, mot_marca,mot_modelo, mot_anoModelo, mot_numeroViatura, mot_cor, mot_status};
 
         dispatch(
             createMotorista({

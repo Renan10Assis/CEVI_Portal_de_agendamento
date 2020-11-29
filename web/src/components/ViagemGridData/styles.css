@@ -1,16 +1,95 @@
-.viagem-data{
+.grid-container{
+    width: 100%; 
+    height: auto;
+    float: left; 
+}
+
+
+.grid-read{
     width: 100%;
     float: left;
     text-align: left;
-    background-color: lemonchiffon;
-    border: 1px;
-    border-style: solid;
-    border-color: rgb(233, 220, 110);
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #a5a18b;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
 }
 
-.viagem-span{
+.grid-read:hover{
+    width: 100%;
     float: left;
-    margin: 0.5% 0.5% 0.5% 0.5%;
+    text-align: left;
+    background-color: #E9DA8F;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+.grid-read-hidden{
+    float: left;
+    visibility: hidden;
+    position: static;
+
+}
+
+
+.rotulo_os{
+    width: 6%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_dtSol{
+    width: 10.5%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_sol{
+    width: 15%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_emp{
+    width: 15%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_nomePass{
+    width: 10%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_telPass{
+    width: 10%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_dtEmb{
+    width: 10.5%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_mot{
+    width: 13%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+.rotulo_status{
+    width: 8%;
+    float: right;
     font-size: 0.8em;
     color: #272727;
 }

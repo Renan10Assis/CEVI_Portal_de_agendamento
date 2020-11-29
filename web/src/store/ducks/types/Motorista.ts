@@ -6,6 +6,7 @@ export interface Motorista {
     mot_nascimento:string;
     mot_telefone:string;
     mot_placa: string;
+    mot_marca: string;
     mot_modelo: string;
     mot_anoModelo: string;
     mot_numeroViatura:string;

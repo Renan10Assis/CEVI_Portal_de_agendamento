@@ -3,9 +3,23 @@ import { NavigationActionTypes } from "../types/actions";
 
 const navigationReducerDefaultState: Navigation = {
     profileImageClicked:false,
-    profileLogoutClicked: false,
-    profilePreferencesClicked:false,
-    profileMouseOver:false
+    profileImageHover:false,
+    profileSairClicked: false,
+    profilePrefClicked:false,
+    profileBlockMouseOver:false,
+    menuCadastroClicked:false,
+    menuCadastroHover:false,
+    viagemOSClicked: "",
+    usuarioIDClicked:"",
+    motoristaIDClicked:"",
+    searchStatus:"",
+    searchTxt: "",
+    searchUserStatus:"",
+    searchUserTxt: "",
+    searchMotTxt:"",
+    searchMotStatus: "",
+    gerarRelatorioClicked:false,
+    solicitarViagemClicked: false
 };
 
 const navigationReducer = (state = navigationReducerDefaultState, action: NavigationActionTypes): Navigation => {

@@ -2,6 +2,7 @@ import React, { useEffect, memo } from 'react';
 import './styles.css';
 import InputLogin from '../../components/InputLogin';
 import home_image2 from '../../assets/home_image2.jpg';
+import home_image from '../../assets/home_image.jpg';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store';
 import { useNavigate } from 'react-router-dom';
@@ -21,7 +22,7 @@ const Home = () => {
             }, 1000);
         } 
     });
-
+    
 
     return (
         <div id="home-container">
@@ -38,7 +39,7 @@ const Home = () => {
             </div>
 
             <div id="right-container">
-                <img id="image-home" src={home_image2} alt="imagem home" />
+                <img id="image-home" src={home_image} alt="imagem home" />
             </div>
 
         </div>

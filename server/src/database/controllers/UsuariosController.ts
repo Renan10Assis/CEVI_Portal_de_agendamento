@@ -231,7 +231,7 @@ class UsuariosController {
                     let token = jwt.sign(user[0],
                         JWT_KEY,
                         {
-                            expiresIn: "1m"
+                            expiresIn: "10h"
                         });
                     
                     return response.json({

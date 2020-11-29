@@ -25,8 +25,8 @@ const authUsuarioReducer = (state = AuthUsuarioReducerDefaultState, action: Usua
             return action.data;
 
         case "LOGOUT_USUARIO":
-           localStorage.removeItem("auth_user");
-
+            localStorage.removeItem("auth_user");
+            return state;
         default:
             return state
 

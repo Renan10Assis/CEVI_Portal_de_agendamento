@@ -1,0 +1,95 @@
+#menu-container{
+    width: 100%;
+    height: 3.5vh;
+    float: left;
+    background-color: #ffdf77;
+    margin-top: 10vh;
+    position: static;
+}
+
+#menu{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: static;
+
+}
+
+.menu-sintetico{
+    float: left;
+    width: 10%;
+    height: 100%;
+    padding-left: 0.2%;
+    border-radius: 0 0 50px 0;
+    color: #272727;
+
+}
+
+.menu-sintetico:hover{
+    float: left;
+    height: 100%;
+    background-color: #ffc83e;
+    cursor: pointer;
+}
+
+.menu-sint-cad{
+    float: left;
+    height: 100%;
+    width: 10%;
+    padding-left: 0.2%;
+    border-radius: 0 0 50px 0;
+    color: #272727;
+
+}
+.menu-sint-cad-selected{
+    float: left;
+    width: 10%;
+    height: 100%;
+    padding-left: 0.2%;
+    border-radius: 0 0 50px 0;
+    color: #272727;
+    background-color: #ffc83e;
+
+}
+
+.menu-sint-cad:hover{
+    float: left;
+    height: 100%;
+    background-color: #ffc83e;
+    cursor: pointer;
+}
+
+.menu-analitico{
+    float: left;
+    color: #424242;
+    width: 100%;
+    height: 50%;
+}
+.menu-analitico:hover{
+    float: left;
+    color: #f2f2f2;
+    background-color: #272727;
+    border-bottom-right-radius: 25%;
+
+}
+
+.cadastro-options-visible{
+    position: relative;
+    width: 9.5%;
+    height: 8vh;
+    background-color: #ffdf77;
+    visibility: visible;
+    float: left;
+    margin-left: 10.6%;
+    border-bottom-right-radius: 25%;
+}
+
+.cadastro-options-hidden{
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+}
+
+.txt{
+    margin: 4%;
+}

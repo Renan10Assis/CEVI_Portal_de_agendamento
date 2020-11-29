@@ -1,8 +1,6 @@
-import React,{memo} from 'react';
+import React from 'react';
 import './styles.css';
 import {UsuarioContainer} from "../UsuarioContainer";
-
-
 
 const Header = () => {
 
@@ -16,9 +14,10 @@ const Header = () => {
             <div id="user-div">
                 <UsuarioContainer/>
             </div>
+
         </div>
     );
 
 }
 
-export default memo(Header);
+export default Header;

@@ -36,10 +36,9 @@ export const startSetViagens = (viagens: Viagem[]) => {
 
 
 export const startCreateViagem = (viagemData: {
-    via_os: number;
-    via_usu_id: string;
-    via_emp_id: string;
+    via_os: string;
     via_mot_id: string;
+    via_nomePassageiro: string;
     via_telPassageiro: string;
     via_end_origem: string;
     via_end_destino: string;
@@ -47,14 +46,19 @@ export const startCreateViagem = (viagemData: {
     via_dataHora_embarque: string;
     via_observacao: string;
     via_status: string;
+    solicitante: string;
+    empresa_viagem: string;
+    empresa_solicitante: string;
 }) => {
     return (dispatch: Dispatch<AppActions>, getState: () => AppState) => {
         const {
-            via_os = 0,
-            via_usu_id = '',
-            via_emp_id = '',
+            via_os = '',
             via_mot_id = '',
+            via_nomePassageiro ='',
             via_telPassageiro = '',
+            empresa_solicitante ='',
+            empresa_viagem = '',
+            solicitante = '',
             via_end_origem = '',
             via_end_destino = '',
             via_dataHora_solicitacao = '',
@@ -62,7 +66,7 @@ export const startCreateViagem = (viagemData: {
             via_observacao = '',
             via_status = '',
         } = viagemData;
-        const viagem = { via_os, via_usu_id, via_emp_id, via_mot_id, via_telPassageiro, via_end_origem, via_end_destino, via_dataHora_solicitacao, via_dataHora_embarque, via_observacao, via_status};
+        const viagem = { via_os, solicitante,via_mot_id, via_nomePassageiro,via_telPassageiro, empresa_solicitante, empresa_viagem ,via_end_origem, via_end_destino, via_dataHora_solicitacao, via_dataHora_embarque, via_observacao, via_status};
 
         dispatch(
             createViagem({

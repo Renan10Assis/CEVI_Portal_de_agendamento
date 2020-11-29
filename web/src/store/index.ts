@@ -6,6 +6,7 @@ import {motoristasReducer} from './ducks/reducers/Motorista';
 import {usuariosReducer} from './ducks/reducers/Usuario';
 import {authUsuarioReducer} from './ducks/reducers/AuthUsuario';
 import {navigationReducer} from './ducks/reducers/Navigation';
+import {viagemStatusReducer} from './ducks/reducers/ViagemStatus';
 import {viagensReducer} from './ducks/reducers/Viagem';
 import { AppActions } from './ducks/types/actions';
 
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     empresas: empresasReducer,
     enderecos: enderecosReducer,
     motoristas: motoristasReducer,
+    viagemStatus: viagemStatusReducer,
     usuarios: usuariosReducer,
     authUsuarios: authUsuarioReducer,
     viagens: viagensReducer
