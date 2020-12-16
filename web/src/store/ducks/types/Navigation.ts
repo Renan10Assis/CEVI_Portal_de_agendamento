@@ -9,12 +9,22 @@ export interface Navigation {
     viagemOSClicked: string;
     usuarioIDClicked:string;
     motoristaIDClicked:string;
+    empresaIDClicked:string;
     searchTxt: string;
     searchStatus:string;
     searchUserTxt: string;
     searchUserStatus:string;
     searchMotTxt: string;
+    searchEmpTxt: string;
     searchMotStatus:string;
     gerarRelatorioClicked: boolean;
     solicitarViagemClicked: boolean;
+    cadastrarMotClicked: boolean;
+    cancelarViagemIDClicked:string;
+    concluirViagemIDClicked:string;
+    viagemOrderBy: string;
+    atualizarListaViagens: boolean;
+    atualizarListaMotoristas: boolean;
+    atualizarListaEmpresas: boolean;
+    atualizarListaUsuarios: boolean;
 }

@@ -41,14 +41,18 @@ const Menu = () => {
             </div>
 
             <div className={navigationState.menuCadastroClicked ? "cadastro-options-visible" : "cadastro-options-hidden"} onMouseLeave={handleCadastroMouseLeave}>
+                <Link className="sub-menu" to="/cadastros-empresas">
+                    <span className="menu-analitico"><p className="txt">Empresas</p></span>
+                </Link>
 
                 <Link className="sub-menu" to="/cadastros-motoristas">
                     <span className="menu-analitico"><p className="txt">Motorista</p></span>
                 </Link>
 
-                <Link className="sub-menu" to="/cadastros-usuarios">
+                <Link className="sub-menu-last" to="/cadastros-usuarios">
                     <span className="menu-analitico"><p className="txt">Usuários</p></span>
                 </Link>
+
             </div>
         </div>
 

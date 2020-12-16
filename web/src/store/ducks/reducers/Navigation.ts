@@ -12,14 +12,24 @@ const navigationReducerDefaultState: Navigation = {
     viagemOSClicked: "",
     usuarioIDClicked:"",
     motoristaIDClicked:"",
+    empresaIDClicked: "",
     searchStatus:"",
     searchTxt: "",
     searchUserStatus:"",
     searchUserTxt: "",
     searchMotTxt:"",
+    searchEmpTxt:"",
     searchMotStatus: "",
     gerarRelatorioClicked:false,
-    solicitarViagemClicked: false
+    solicitarViagemClicked: false,
+    cadastrarMotClicked: false,
+    cancelarViagemIDClicked:"",
+    concluirViagemIDClicked:"",
+    viagemOrderBy:"",
+    atualizarListaViagens:true,
+    atualizarListaEmpresas:true,
+    atualizarListaMotoristas:true,
+    atualizarListaUsuarios:true
 };
 
 const navigationReducer = (state = navigationReducerDefaultState, action: NavigationActionTypes): Navigation => {

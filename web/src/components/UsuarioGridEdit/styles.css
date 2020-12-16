@@ -26,7 +26,7 @@
     float: left;
 }
 
-.divisoria {
+.divisoria-usu {
     float: left;
     width: 1px;
     background-color: #7e6f1d;
@@ -36,21 +36,20 @@
 }
 
 .secaoUsuDados {
-    min-width: 15%;
-    max-width: 25%;
+    width: 25%;
     float: left;
     height: 35vh;
 
 }
 
-.secaoEmpDados {
+.secaoUsuEmpDados {
     width: 47.5%;
     float: left;
     height: 35vh;
 
 }
 
-.secaoButtons {
+.secaoUsuButtons {
     width: 100%;
     float: left;
     padding: 5px;
@@ -58,7 +57,7 @@
     height: 3vh;
 }
 
-.secaoRetrair {
+.secaoUsuRetrair {
     width: 100%;
     height: 2em;
     float: left;
@@ -69,7 +68,7 @@
     text-align: center;
 }
 
-.secaoRetrair:hover {
+.secaoUsuRetrair:hover {
     width: 100%;
     float: left;
     background-color: #5080a8;
@@ -87,18 +86,18 @@
     margin-bottom: 1%;
 }
 
-.msgStatus {
+.msgUsuStatus {
     float: left;
 }
 
-#icon-edit {
+#icon-usu-edit {
     width: 3%;
     height: 3.5vh;
     position: absolute;
     left: 3%;
 }
 
-#icon-edit:hover {
+#icon-usu-edit:hover {
     width: 3%;
     height: 3.5vh;
     cursor: pointer;
@@ -106,14 +105,14 @@
     border-radius: 15px;
 }
 
-#icon-confirm {
+#icon-usu-confirm {
     width: 3%;
     height: 3.5vh;
     left: 9%;
     position: absolute;
 }
 
-#icon-confirm:hover {
+#icon-usu-confirm:hover {
     width: 3%;
     height: 3.5vh;
     cursor: pointer;
@@ -129,7 +128,7 @@
 }
 
 
-.edit-rotulo {
+.edit-usu-rotulo {
     float: left;
     width: 100%;
     font-size: 1.1em;
@@ -138,7 +137,7 @@
     margin-top: 20px;
 }
 
-.edit-rotulo-hidden {
+.edit-usu-rotulo-hidden {
     float: left;
     width: 0;
     position: absolute;
@@ -185,7 +184,7 @@
     font-size: 1.1em;
 }
 
-.emp-label-data {
+.usu-emp-label-data {
     font-size: 1.2em;
     color: #7e6f1d;
     float: left;
@@ -193,7 +192,7 @@
     width: 80%;
 }
 
-.emp-select {
+.usu-emp-select {
     font-size: 1.2em;
     color: #272727;
     float: left;
@@ -201,17 +200,17 @@
     width: 80%;
 }
 
-.emp-select:focus {
+.usu-emp-select:focus {
     border-radius: 5px;
 }
 
-.emp-select-hidden {
+.usu-emp-select-hidden {
     float: left;
     position: absolute;
     visibility: hidden;
 }
 
-.status-select {
+.usu-status-select {
     font-size: 1.2em;
     color: #272727;
     float: left;
@@ -220,11 +219,11 @@
     width: 80%;
 }
 
-.status-select:focus {
+.usu-status-select:focus {
     border-radius: 5px;
 }
 
-.status-select-hidden {
+.usu-status-select-hidden {
     float: left;
     position: absolute;
     visibility: hidden;

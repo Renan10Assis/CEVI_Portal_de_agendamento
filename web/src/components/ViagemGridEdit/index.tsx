@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
 import { Viagem } from "../../store/ducks/types/Viagem";
 import { Motorista } from '../../store/ducks/types/Motorista';
-import { FiCheck, FiEdit, FiArrowUpCircle } from 'react-icons/fi';
 import api from '../../services/api';
 import { startUpdateMotViagem } from '../../store/ducks/actions/Viagem';
 import { startSetNavigation } from '../../store/ducks/actions/Navigation';
@@ -17,7 +16,8 @@ const ViagemGridEdit = () => {
     const viagemState = useSelector((state: AppState) => state.viagens);
     const navigationState = useSelector((state: AppState) => state.navigation);
     const [editData, setEditData] = useState<boolean>(false);
-    const [optionMot, setOptionMot] = useState<string>("");
+    const [defaultMot, setDefaultMot] = useState<string>("Não atribuído");
+    const [optionMot, setOptionMot] = useState<string>(defaultMot);
     const listaStatus = useSelector((state: AppState) => state.viagemStatus);
     const [msg, setMsg] = useState<string>("");
     const authUserState = useSelector((state: AppState) => state.authUsuarios);
@@ -41,7 +41,7 @@ const ViagemGridEdit = () => {
 
     const initialMotState = {
         mot_id: "",
-        mot_nome: "",
+        mot_nome: defaultMot,
         mot_sexo: "",
         mot_cpf: "",
         mot_nascimento: "",
@@ -68,40 +68,51 @@ const ViagemGridEdit = () => {
     }, [navigationState.viagemOSClicked]);
 
     useEffect(() => {
-        if (optionMot) {
+        if (optionMot !== defaultMot) {
             motoristaState.map(mot => {
                 if (mot.mot_id === optionMot) {
-                    return setMotorista(mot);
+                    setMotorista(mot);
 
                 }
             });
         } else {
-            return setMotorista(initialMotState);
+            setMotorista(initialMotState);
         }
     }, [optionMot]);
 
 
+    function handleEditClick(action: MouseEvent<HTMLButtonElement>) {
+        action.preventDefault();
+        setEditData(true);
+    }
+
+    function handleFecharClick(action: MouseEvent<HTMLButtonElement>) {
+        action.preventDefault();
+        if (editData) {
+            return alert("Salve as alterações antes de sair!");
+        }
+        let newNavState = navigationState;
+        newNavState.viagemOSClicked = "";
+        dispatch(startSetNavigation(newNavState));
+    }
 
     function handleOptionChange(action: ChangeEvent<HTMLSelectElement>) {
-        setOptionMot(action.target.value);
-    }
-
-
-    function handleRetrairClick(action: MouseEvent<HTMLDivElement>) {
-        if (editData) {
-            alert("Salve as alterações antes de fechar!");
+        action.preventDefault();
+        if (action.target.value !== defaultMot) {
+            setOptionMot(action.target.value);
+            viagem.via_status = listaStatus.confirmado;
         } else {
-
-            let newNavState = navigationState;
-            newNavState.viagemOSClicked = "";
-            setMsg("");
-            dispatch(startSetNavigation(newNavState));
+            setOptionMot(defaultMot);
+            viagem.via_status = listaStatus.aguardando;
         }
+
     }
 
 
-    const handleUpdateData = (action: MouseEvent<SVGElement>) => {
 
+    const handleUpdateData = (action: MouseEvent<HTMLButtonElement>) => {
+
+        action.preventDefault();
         try {
 
             const viagemData = viagem;
@@ -153,98 +164,121 @@ const ViagemGridEdit = () => {
 
 
     return (
-        <div id="grid-container">
+        <div id="grid-edit-container">
 
-            <form action="submit" className={navigationState.viagemOSClicked ? "grid-edit" : "grid-edit-hidden"}>
-                <div className="secao">
+            <form action="submit" className="grid-viagem-edit">
 
-                    <span className="rotulo">OS:</span>
-                    <span className="edit-os">{viagem.via_os}</span>
-
-                    <span className="rotulo">Data Solicitação:</span>
-                    <span className="edit-dt">{viagem.via_dataHora_solicitacao}</span>
-
-                    <span className="rotulo">Solicitante:</span>
-                    <span className="edit-solic">{viagem.solicitante} - {viagem.empresa_solicitante}</span>
+                <div className="secao-title-inline">
+                    <span className="lbl-via-detail-rotulo">Detalhes da viagem</span>
                 </div>
 
-                <div className="secao">
-
-                    <span className="rotulo">Nome Passageiro:</span>
-                    <span className="edit-nomePass">{viagem.via_nomePassageiro}</span>
-
-                    <span className="rotulo">Empresa:</span>
-                    <span className="edit-empresa">{viagem.empresa_viagem}</span>
-
-                    <span className="rotulo">Telefone Passageiro:</span>
-                    <span className="edit-telPass">{viagem.via_telPassageiro}</span>
-
-
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">OS:</span>
+                    <span className="viagem-dados">{viagem.via_os}</span>
                 </div>
 
-                <div className="secao">
-                    <span className="rotulo">Data/Hora Embarque:</span>
-                    <span className="edit-dt">{viagem.via_dataHora_embarque}</span>
+                <div className="secao-dados-inline">
+
+                    <span className="lbl-rotulo">Data Solicitação:</span>
+                    <span className="viagem-dados">{viagem.via_dataHora_solicitacao}</span>
                 </div>
 
-                <div className="secao">
-                    <span className="rotulo">Endereço Origem:</span>
-                    <span className="txt-endereco">{viagem.via_end_origem}</span>
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Solicitante:</span>
+                    <span className="viagem-dados">{viagem.solicitante} - {viagem.empresa_solicitante}</span>
                 </div>
 
-                <div className="secao">
-                    <span className="rotulo">Endereço Destino:</span>
-                    <span className="txt-endereco">{viagem.via_end_destino}</span>
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Nome Passageiro:</span>
+                    <span className="viagem-dados">{viagem.via_nomePassageiro}</span>
                 </div>
 
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Empresa:</span>
+                    <span className="viagem-dados">{viagem.empresa_viagem}</span>
+                </div>
 
-                <div className="secao">
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Telefone Passageiro:</span>
+                    <span className="viagem-dados">{viagem.via_telPassageiro}</span>
+                </div>
 
-                    <select id="escolha" disabled={editData ? false : true}  className={authUserState.user.usu_tipo === "Administrador" ? "mot-select" : "mot-select-hidden"} onChange={handleOptionChange}>
-                        <option value=""></option>
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Observações:</span>
+                    <span className="viagem-dados">{viagem.via_observacao}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Data/Hora Embarque:</span>
+                    <span className="viagem-dados">{viagem.via_dataHora_embarque}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Endereço Origem:</span>
+                    <span className="viagem-dados">{viagem.via_end_origem}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Endereço Destino:</span>
+                    <span className="viagem-dados">{viagem.via_end_destino}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Motorista:</span>
+                    <span className="viagem-dados">{motorista.mot_nome}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Sexo:</span>
+                    <span className="viagem-dados">{motorista.mot_sexo}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Marca:</span>
+                    <span className="viagem-dados">{motorista.mot_marca}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Modelo:</span>
+                    <span className="viagem-dados">{motorista.mot_modelo}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Cor:</span>
+                    <span className="viagem-dados">{motorista.mot_cor}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Placa:</span>
+                    <span className="viagem-dados">{motorista.mot_placa}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Numero da Viatura:</span>
+                    <span className="viagem-dados">{motorista.mot_numeroViatura}</span>
+                </div>
+
+                <div className="secao-dados-inline">
+                    <span className="lbl-rotulo">Status:</span>
+                    <span className="viagem-dados">{viagem.via_status}</span>
+                </div>
+
+                {authUserState.user.usu_tipo !== "Cliente" ? <div className="secao-dados-inline">
+                    <span className="select-atribuir-rotulo">Atribuir motorista:</span>
+                    <select value={optionMot} disabled={editData ? false : true} className="select-atribuir-dados" onChange={handleOptionChange}>
+                        <option value={defaultMot}>{defaultMot}</option>
                         {motoristaState.map(mot => {
-                            return mot.mot_status==="Ativo"?<option key={mot.mot_id} value={mot.mot_id}>{mot.mot_nome}</option>:null;
+                            return mot.mot_status === "Ativo" ? <option key={mot.mot_id} value={mot.mot_id}>{mot.mot_nome}</option> : null;
                         }
                         )}
-
                     </select>
-                    <span className="rotulo">Motorista:</span>
-                    <span className="mot_data">{motorista.mot_nome}</span>
+                </div> : null}
 
-                    <span className="rotulo">Sexo:</span>
-                    <span className="mot_data">{motorista.mot_sexo}</span>
+                <span id="msgViaStatus">{msg}</span>
 
-                    <span className="rotulo">Marca:</span>
-                    <span className="mot_data">{motorista.mot_marca}</span>
-
-                    <span className="rotulo">Modelo:</span>
-                    <span className="mot_data">{motorista.mot_modelo}</span>
-
-                    <span className="rotulo">Cor:</span>
-                    <span className="mot_data">{motorista.mot_cor}</span>
-
-                    <span className="rotulo">Placa:</span>
-                    <span className="mot_data">{motorista.mot_placa}</span>
-
-                    <span className="rotulo">Numero da Viatura:</span>
-                    <span className="mot_data">{motorista.mot_numeroViatura}</span>
-
-                    <span className="rotulo">Status:</span>
-                    <span className="edit-status">{viagem.via_status}</span>
-
-                </div>
-
-                <div className="secaoViaButtons">
-
-                    <span id="msgViaStatus">{msg}</span>
-                    <FiCheck name="submit" id="icon-via-confirm" visibility={authUserState.user.usu_tipo === "Administrador" && editData && navigationState.viagemOSClicked ? "visible" : "hidden"} onClick={handleUpdateData} />
-                    <FiEdit id="icon-via-edit" visibility={authUserState.user.usu_tipo === "Administrador" && !editData && navigationState.viagemOSClicked && viagem.via_status!== listaStatus.concluido ? "visible" : "hidden"} onClick={() => setEditData(true)} />
-                </div>
-
-                <div className="secaoViaRetrair" onClick={handleRetrairClick}>
-                    <FiArrowUpCircle />
-                    Fechar
-                </div>
+                {authUserState.user.usu_tipo !== "Cliente" ? <button id="btn-edit-via-editar" onClick={handleEditClick}>Editar</button> : null}
+                {authUserState.user.usu_tipo !== "Cliente" ? <button disabled={!editData} name="submit" id={editData ? "btn-edit-via-salvar" : "btn-edit-via-salvar-disabled"} onClick={handleUpdateData}>Salvar</button> : null}
+                <button id="btn-edit-via-fechar" onClick={handleFecharClick}>Fechar</button>
 
             </form>
         </div>

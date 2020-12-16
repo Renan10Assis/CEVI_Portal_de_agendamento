@@ -1,0 +1,250 @@
+.grid-container {
+    width: 100%;
+    float: left;
+}
+
+.grid-user-edit {
+    width: 100%;
+    float: left;
+    background-color: #d8d8d8;
+    position: static;
+    transition: 300ms;
+    border-radius: 0 0 30px 30px;
+}
+
+.grid-user-edit-hidden {
+    float: left;
+    visibility: hidden;
+    position: relative;
+    width: 0;
+    /*transition: 300ms;*/
+}
+
+.secaoFoto {
+    width: 25%;
+    height: 35vh;
+    float: left;
+}
+
+.divisoria {
+    float: left;
+    width: 1px;
+    background-color: #7e6f1d;
+    height: 25vh;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.secaoUsuDados {
+    min-width: 15%;
+    max-width: 25%;
+    float: left;
+    height: 35vh;
+
+}
+
+.secaoEmpDados {
+    width: 47.5%;
+    float: left;
+    height: 35vh;
+
+}
+
+.secaoButtons {
+    width: 100%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    height: 3vh;
+}
+
+.secaoRetrair {
+    width: 100%;
+    height: 2em;
+    float: left;
+    background-color: #acacac;
+    border-radius: 0 0 30px 30px;
+    font-size: 0.9em;
+    color: #272727;
+    text-align: center;
+}
+
+.secaoRetrair:hover {
+    width: 100%;
+    float: left;
+    background-color: #5080a8;
+    text-align: center;
+    cursor: pointer;
+    height: 2em;
+    font-size: 0.9em;
+    color: #272727;
+}
+
+.rotulos_user_grid {
+    float: left;
+    color: #293455;
+    margin-right: 0.5%;
+    margin-bottom: 1%;
+}
+
+.msgStatus {
+    float: left;
+}
+
+#icon-edit {
+    width: 3%;
+    height: 3.5vh;
+    position: absolute;
+    left: 3%;
+}
+
+#icon-edit:hover {
+    width: 3%;
+    height: 3.5vh;
+    cursor: pointer;
+    background-color: #fff48e;
+    border-radius: 15px;
+}
+
+#icon-confirm {
+    width: 3%;
+    height: 3.5vh;
+    left: 9%;
+    position: absolute;
+}
+
+#icon-confirm:hover {
+    width: 3%;
+    height: 3.5vh;
+    cursor: pointer;
+    background-color: #3cc264;
+    border-radius: 15px;
+}
+
+.edit-usu-imagem {
+    float: left;
+    width: 80%;
+    border-radius: 100%;
+    margin: 5%;
+}
+
+
+.edit-rotulo {
+    float: left;
+    width: 100%;
+    font-size: 1.1em;
+    border-radius: 5px;
+    color: #272727;
+    margin-top: 20px;
+}
+
+.edit-rotulo-hidden {
+    float: left;
+    width: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.edit-usunome {
+    float: left;
+    width: 90%;
+    font-size: 1.3em;
+    border-radius: 5px;
+    color: #7e6f1d;
+}
+
+.edit-usunome-hidden {
+    float: left;
+    width: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.edit-usunome:focus {
+    border-radius: 5px;
+}
+
+.edit-usu-email {
+    width: 100%;
+    float: left;
+    color: #7e6f1d;
+    font-size: 1.1em;
+}
+
+.edit-usu-tipo {
+    width: 100%;
+    float: left;
+    color: #7e6f1d;
+    font-size: 1.1em;
+}
+
+.edit-usu-status {
+    width: 100%;
+    float: left;
+    color: #7e6f1d;
+    font-size: 1.1em;
+}
+
+.emp-label-data {
+    font-size: 1.2em;
+    color: #7e6f1d;
+    float: left;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.emp-select {
+    font-size: 1.2em;
+    color: #272727;
+    float: left;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.emp-select:focus {
+    border-radius: 5px;
+}
+
+.emp-select-hidden {
+    float: left;
+    position: absolute;
+    visibility: hidden;
+}
+
+.status-select {
+    font-size: 1.2em;
+    color: #272727;
+    float: left;
+    margin-right: 1%;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.status-select:focus {
+    border-radius: 5px;
+}
+
+.status-select-hidden {
+    float: left;
+    position: absolute;
+    visibility: hidden;
+}
+
+.tipo-user-select {
+    font-size: 1.2em;
+    color: #272727;
+    float: left;
+    margin-right: 1%;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.tipo-user-select:focus {
+    border-radius: 5px;
+}
+
+.tipo-user-select-hidden {
+    float: left;
+    position: absolute;
+    visibility: hidden;
+}

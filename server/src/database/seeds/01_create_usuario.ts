@@ -5,9 +5,9 @@ export async function seed(knex: Knex) {
     await knex('usuarios').insert([
         {
             usu_id: "3hud-41fd-a0da1-ds5da",
-            usu_nome: 'Renan.Assis',
+            usu_nome: 'renan.assis',
             usu_email: "renan@gmail.com",
-            usu_senha: "$2b$10$OFoXRdpqQbQ6Chf2UtGOdeEsd4pQfqq5Tc9y9gFR.djqQSHoAMbZS",
+            usu_senha: "$2b$10$3sZ9IBwGs8Mk/ot4RuezgeUXlyuN8j9eywhvLMX1ptuA0B4.TNWCO",
             usu_emp_id: "hud-f41fd-asda1-dsasda",
             usu_tipo: "Administrador",
             usu_status: "Ativo",

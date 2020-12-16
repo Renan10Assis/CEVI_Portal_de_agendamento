@@ -42,8 +42,8 @@ routes.get('/motoristas', motoristaController.index);
 routes.post('/motoristas', motoristaController.create);
 routes.put('/motoristas',motoristaController.update);
 
-routes.get('/viagens',viagemController.index);
-routes.get('/viagens/:emp_id', viagemController.show);
+routes.post('/viagens/list',viagemController.index);
+routes.post('/viagens/list/:emp_id', viagemController.show);
 routes.post('/viagens',viagemController.create);
 routes.put('/viagens/upd-mot', viagemController.updateMotoristaViagem);
 routes.put('/viagens/upd-status', viagemController.updateStatusViagem);

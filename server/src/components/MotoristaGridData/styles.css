@@ -1,0 +1,99 @@
+.grid-mot-container{
+    width: 100%; 
+    height: auto;
+    float: left; 
+}
+
+
+.grid-mot-read{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #a5a18b;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.grid-mot-read:hover{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #E9DA8F;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+.grid-mot-read-hidden{
+    float: left;
+    visibility: hidden;
+    position: absolute;
+
+}
+
+
+.rotulo-mot-nome{
+    width: 20%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+}
+.rotulo-mot-tel{
+    width: 12%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+}
+.rotulo-mot-marca{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+}
+.rotulo-mot-modelo{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+}
+.rotulo-mot-cor{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.rotulo-mot-placa{
+    width: 8%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+}
+.rotulo-mot-viat{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+}
+
+.rotulo-mot-status{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+}

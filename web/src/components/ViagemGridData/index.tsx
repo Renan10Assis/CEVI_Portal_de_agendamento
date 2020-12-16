@@ -18,7 +18,7 @@ const ViagemGridData: React.FC<Viagem> = (props) => {
 
     const initialMotState = {
         mot_id: "",
-        mot_nome: "",
+        mot_nome: "Não atribuído",
         mot_sexo: "",
         mot_cpf: "",
         mot_nascimento: "",
@@ -58,10 +58,10 @@ const ViagemGridData: React.FC<Viagem> = (props) => {
 
 
     return (
-        <div id="grid-container">
+        <div id="grid-data-container">
 
 
-            <div className={navigationState.viagemOSClicked ? "grid-read-hidden" : "grid-read"} onClick={handleViewDetails}>
+            <div className="grid-read" onClick={handleViewDetails}>
 
                 <span className="rotulo_os">{viagemProp.via_os}</span>
                 <span className="rotulo_dtSol">{viagemProp.via_dataHora_solicitacao}</span>

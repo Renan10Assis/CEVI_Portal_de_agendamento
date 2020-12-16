@@ -16,26 +16,26 @@
     float: left;
     color: #272727;
     font-weight: normal;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 25%;
 }
 
-.txt-search{
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    float: left;
-
-}
 
 .txt-search{
     width: 90%;
     margin-left: 5%;
-    margin-top: 5%;
+    margin-top: 2%;
     float: left;
-    border-color: #7c7c7c;
+    border-color: #969696;
+    height: 20px;
 
 }
+
+.txt-search:focus{
+    border-color: #3e75a8;
+}
+
+
 
 .lblStatus{
     float: left;
@@ -51,27 +51,37 @@
     float: left;
     margin-top: 4%;
     margin-left: 1%;
+    margin-right: 20%;
+}
+.lblViagemOrder{
+    float: left;
+    width: 20%;
+    margin-top: 2%;
+    margin-left: 5%;
+    color: #272727;
+    font-size: 0.9em;
+}
+
+.search-sel-via-order{
+    width: 40%;
+    float: left;
+    margin-top: 2%;
+    margin-left: 1%;
 }
 
 .btn-search-viagem{
     width: 25%;
     float: left;
     height: 1.9em;
-    margin-top: 3%;
-    margin-left: 3%;
-    border-radius: 5px;
+    margin-left: 4%;
+    border-radius: 0.3em;
     border: none;
     background-color: #7692bb;
     color: #f2f2f2;
 }
 
 .btn-search-viagem:hover{
-    width: 25%;
-    float: left;
-    height: 1.9em;
-    margin-top: 3%;
-    margin-left: 3%;
-    border-radius: 0.5em;
+
     background-color: #272727;
     cursor: pointer;
 }

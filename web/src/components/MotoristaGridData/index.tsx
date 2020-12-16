@@ -28,7 +28,7 @@ const MotoristaGridData: React.FC<Motorista> = (props) => {
         <div id="grid-mot-container">
 
 
-            <div className={navigationState.motoristaIDClicked ? "grid-mot-read-hidden" : "grid-mot-read"} onClick={handleViewMotDetails}>
+            <div className="grid-mot-read" onClick={handleViewMotDetails}>
 
                 <span className="rotulo-mot-nome">{motoristaProp.mot_nome}</span>
                 <span className="rotulo-mot-tel">{motoristaProp.mot_telefone}</span>

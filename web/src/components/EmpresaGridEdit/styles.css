@@ -1,0 +1,176 @@
+.grid-container {
+    width: 100%;
+    float: left;
+}
+
+.grid-emp-edit {
+    width: 100%;
+    float: left;
+    background-color: #d8d8d8;
+    position: static;
+    transition: 300ms;
+    border-radius: 0 0 30px 30px;
+}
+
+.grid-emp-edit-hidden {
+    float: left;
+    visibility: hidden;
+    position: relative;
+    width: 0;
+    /*transition: 300ms;*/
+}
+
+
+.emp-divisoria {
+    float: left;
+    width: 1px;
+    background-color: #7e6f1d;
+    height: 35vh;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+.secaoEmpDados {
+    width: 100%;
+    float: left;
+    height: 17vh;
+
+}
+
+
+.secaoEmpButtons {
+    width: 100%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    height: 3.5vh;
+}
+
+.secaoEmpRetrair {
+    width: 100%;
+    height: 2em;
+    float: left;
+    background-color: #acacac;
+    border-radius: 0 0 30px 30px;
+    font-size: 0.9em;
+    color: #272727;
+    text-align: center;
+}
+
+.secaoEmpRetrair:hover {
+    width: 100%;
+    float: left;
+    background-color: #5080a8;
+    text-align: center;
+    cursor: pointer;
+    height: 2em;
+    font-size: 0.9em;
+    color: #272727;
+}
+
+
+.msgEmpStatus {
+    float: left;
+}
+
+#icon-emp-edit {
+    width: 3%;
+    height: 3.5vh;
+    position: absolute;
+    left: 10.5%;
+}
+
+#icon-emp-edit:hover {
+    width: 3%;
+    height: 3.5vh;
+    cursor: pointer;
+    background-color: #fff48e;
+    border-radius: 15px;
+}
+
+#icon-emp-confirm {
+    width: 3%;
+    height: 3.5vh;
+    left: 15%;
+    position: absolute;
+}
+
+#icon-emp-confirm:hover {
+    width: 3%;
+    height: 3.5vh;
+    cursor: pointer;
+    background-color: #3cc264;
+    border-radius: 15px;
+}
+
+
+.edit-empresa-rotulo {
+    float: left;
+    width: 13%;
+    font-size: 1em;
+    border-radius: 5px;
+    color: #272727;
+    margin-top: 10px;
+    margin-left: 15%;
+}
+
+
+.edit-empresa-inp {
+    float: left;
+    width: 50%;
+    font-size: 1em;
+    color: #7e6f1d;
+    margin-left: 2%;
+    margin-top: 10px;
+
+
+}
+
+.edit-empresa-nome {
+    float: left;
+    width: 60%;
+    font-size: 1em;
+    color: #7e6f1d;
+    margin-left: 2%;
+    margin-top: 10px;
+
+
+}
+
+
+.edit-empresa-cnpj {
+    width: 60%;
+    float: left;
+    color: #7e6f1d;
+    font-size: 1em;
+    margin-left: 2%;
+    margin-top: 10px;
+
+}
+
+.edit-empresa-ender {
+    width: 60%;
+    float: left;
+    color: #7e6f1d;
+    font-size: 1em;
+    margin-left: 2%;
+    margin-top: 10px;
+    position: relative;
+
+}
+
+
+.empresa-title-lbl{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 10px;
+    color:#272727;
+}
+
+.edit-empresa-data-hidden{
+    width: 0;
+    float: left;
+    position: absolute;
+    visibility: hidden;
+}

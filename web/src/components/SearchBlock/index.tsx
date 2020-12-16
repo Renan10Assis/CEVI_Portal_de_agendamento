@@ -33,6 +33,15 @@ const SearchBlock = () => {
         setStatus(action.target.value);
     }
 
+    function handleOrderOptionChange(action:ChangeEvent<HTMLSelectElement>){
+        action.preventDefault();
+        let newNavState = navigationState;
+        newNavState.viagemOrderBy = action.target.value;
+        newNavState.atualizarListaViagens = true;
+        dispatch(startSetNavigation(newNavState));
+        console.log(navigationState)
+    }
+
     return (
         <div id="search-container">
             <h4 className="search-title">Pesquisar viagem</h4>
@@ -46,6 +55,13 @@ const SearchBlock = () => {
                     <option value={statusOptions.confirmado}>Confirmado</option>
                     <option value={statusOptions.concluido}>Concluído</option>
                     <option value={statusOptions.cancelado}>Cancelado</option>
+                </select>
+
+                <span className="lblViagemOrder">Ordem:</span>
+                <select className="search-sel-via-order" onChange={handleOrderOptionChange}>
+                    <option value="via_dataHora_embarque">Data de Embarque</option>
+                    <option value="via_dataHora_solicitacao">Data da Solicitação</option>
+                    
                 </select>
                 <button className="btn-search-viagem" name="submit" onClick={handleSearchClick} >Buscar</button>
             </form>

@@ -1,0 +1,194 @@
+.grid-container{
+    width: 100%; 
+    height: auto;
+    float: left; 
+}
+
+.grid-edit{
+    width: 100%;
+    float: left;
+    background-color: #d8d8d8;
+    position: static;
+    transition: 300ms;
+    border-radius: 0 0 30px 30px;
+
+}
+
+.grid-edit-hidden{
+    float: right;
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+
+}
+
+.secao{
+    width: 100%;
+    float: left;
+    padding: 5px;
+}
+.secaoViaButtons{
+    width: 100%;
+    float: left;
+    padding: 5px;
+    height: 2em;
+    text-align: center;
+}
+
+
+
+.secaoViaRetrair{
+    width: 100%;
+    height: 2em;
+    float: left;
+    background-color: #acacac;
+    border-radius: 0 0 30px 30px;
+    font-size: 0.9em;
+    color: #272727;
+    text-align: center;
+}
+.secaoViaRetrair:hover{
+    width: 100%;
+    float: left;
+    background-color: #5080a8;
+    text-align: center;
+    cursor: pointer;
+    height: 2em;
+    font-size: 0.9em;
+    color: #272727;
+
+
+}
+
+.msgViaStatus{
+    float: left;
+    width: 100%;
+}
+
+.mot-select{
+    font-size: 0.8em;
+    color: #272727;
+    float: left;
+    margin-right: 1%;
+}
+
+.mot-select-hidden{
+    float: left;
+    position: absolute;
+    visibility: hidden;
+}
+.mot_data{
+    font-size: 0.8em;
+    color: #272727;
+    float: left;
+    margin-right: 1%;
+}
+
+.rotulo{
+    float: left;
+    font-size: 0.8em;
+    color: #293455;
+    margin-right: 0.5%;
+    margin-bottom: 1%;
+
+}
+
+
+.edit-os{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+.edit-dt{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+}
+
+
+
+.edit-solic{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    width: 20%;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+
+.edit-nomePass{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+
+.edit-empresa{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+.edit-telPass{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+
+
+.edit-status{
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    margin-right: 1%;
+    min-width: 5%;
+
+}
+
+
+#icon-via-edit{
+    width: 3%;
+    position: absolute;
+    height: 3.5vh;
+    left: 10px;
+}
+#icon-via-edit:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+#icon-via-confirm{
+    width: 3%;
+    height: 3.5vh;
+    position: absolute;
+    left: 70px;
+
+}
+
+#icon-via-confirm:hover{
+    cursor: pointer;
+    background-color: #3cc264;
+    border-radius: 15px;
+}
+
+.txt-endereco{
+    width: 40%;
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+}
+

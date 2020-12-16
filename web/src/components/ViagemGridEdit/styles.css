@@ -1,194 +1,138 @@
-.grid-container{
-    width: 100%; 
-    height: auto;
-    float: left; 
-}
-
-.grid-edit{
-    width: 100%;
+#grid-edit-container {
     float: left;
-    background-color: #d8d8d8;
-    position: static;
-    transition: 300ms;
-    border-radius: 0 0 30px 30px;
-
-}
-
-.grid-edit-hidden{
-    float: right;
-    visibility: hidden;
-    position: absolute;
-    width: 0;
-
-}
-
-.secao{
     width: 100%;
-    float: left;
-    padding: 5px;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
-.secaoViaButtons{
-    width: 100%;
+
+.grid-viagem-edit {
+    width: 46%;
+    background-color: #f2f2f2;
+    top: 13.5%;
+    left: 27%;
+    position: fixed;
+}
+
+
+#msgViaStatus {
     float: left;
-    padding: 5px;
-    height: 2em;
+    width: 100%;
+    height: 1.2em;
     text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
-
-
-.secaoViaRetrair{
-    width: 100%;
-    height: 2em;
+.secao-dados-inline{
+    width: 80%;
     float: left;
-    background-color: #acacac;
-    border-radius: 0 0 30px 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+.secao-title-inline{
+    width: 100%;
+    float: left;
+    text-align: center;
+    background-color: #272727;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 2%;
+}
+
+.lbl-rotulo{
+    color: #272727;
+    float: left;
     font-size: 0.9em;
-    color: #272727;
-    text-align: center;
-}
-.secaoViaRetrair:hover{
-    width: 100%;
-    float: left;
-    background-color: #5080a8;
-    text-align: center;
-    cursor: pointer;
-    height: 2em;
-    font-size: 0.9em;
-    color: #272727;
-
-
-}
-
-.msgViaStatus{
-    float: left;
-    width: 100%;
-}
-
-.mot-select{
-    font-size: 0.8em;
-    color: #272727;
-    float: left;
-    margin-right: 1%;
-}
-
-.mot-select-hidden{
-    float: left;
-    position: absolute;
-    visibility: hidden;
-}
-.mot_data{
-    font-size: 0.8em;
-    color: #272727;
-    float: left;
-    margin-right: 1%;
-}
-
-.rotulo{
-    float: left;
-    font-size: 0.8em;
-    color: #293455;
-    margin-right: 0.5%;
+    width: 27%;
     margin-bottom: 1%;
 
 }
 
-
-.edit-os{
+.lbl-via-detail-rotulo{
+    color: #f2f2f2;
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
-
+    font-size: 0.9em;
+    width: 100%;
 }
-.edit-dt{
+
+.viagem-dados{
+    color: #443200;
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
+    font-size: 0.9em;
+    margin-left: 2%;
+    width: 70%;
+    margin-bottom: 1%;
 }
 
 
-
-.edit-solic{
+.select-atribuir-rotulo{
+    color: #272727;
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    width: 20%;
-    margin-right: 1%;
-    min-width: 5%;
-
+    font-size: 0.9em;
+    width: 27%;
+    margin-top: 5%;
 }
 
-.edit-nomePass{
+.select-atribuir-dados{
+    color: #272727;
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
+    font-size: 0.9em;
+    margin-left: 2%;
+    margin-top: 5%;
+    width: 50%;
 
 }
 
-.edit-empresa{
+
+
+#btn-edit-via-salvar {
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
-
+    width: 32%;
+    height: 3em;
+    background-color: #272727;
+    border: none;
+    color: #f2f2f2;
 }
-.edit-telPass{
+
+#btn-edit-via-salvar-disabled {
     float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
-
+    width: 32%;
+    height: 3em;
+    background-color: #4d4d4d;
+    border: none;
 }
-
-
-.edit-status{
-    float: left;
-    font-size: 0.8em;
-    color: #272727;
-    margin-right: 1%;
-    min-width: 5%;
-
-}
-
-
-#icon-via-edit{
-    width: 3%;
-    position: absolute;
-    height: 3.5vh;
-    left: 10px;
-}
-#icon-via-edit:hover{
+#btn-edit-via-salvar:hover {
+    background-color: #6cc077;
     cursor: pointer;
-    background-color: #ffffff;
-    border-radius: 15px;
 }
 
-#icon-via-confirm{
-    width: 3%;
-    height: 3.5vh;
-    position: absolute;
-    left: 70px;
-
-}
-
-#icon-via-confirm:hover{
-    cursor: pointer;
-    background-color: #3cc264;
-    border-radius: 15px;
-}
-
-.txt-endereco{
-    width: 40%;
+#btn-edit-via-editar {
     float: left;
-    font-size: 0.8em;
-    color: #272727;
+    width: 34%;
+    height: 3em;
+    border: none;
+    background-color: #272727;
+    color: #f2f2f2;
 }
 
+#btn-edit-via-editar:hover {
+    background-color: #8f7a1d;
+    cursor: pointer;
+}
+
+#btn-edit-via-fechar {
+    float: right;
+    width: 34%;
+    height: 3em;
+    border: none;
+    background-color: #272727;
+    color: #f2f2f2;
+}
+
+#btn-edit-via-fechar:hover {
+    background-color: #c06c6c;
+    cursor: pointer;
+}

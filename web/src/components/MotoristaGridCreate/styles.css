@@ -1,0 +1,351 @@
+.mot-create-container{
+    width: 23.5%;
+    height: 100%;
+    float: left;
+    
+}
+
+.solicitar-label{
+    width: 100%;
+    float: left;
+    height: 2em;
+    font-size: 1em;
+    color: #272727;
+    margin-top: 3.5%;
+    text-align: center;
+}
+.btn-solicitar{
+    width: 10em;
+    height: 2em;
+    float: left;
+    font-size: 1em;
+    background-color: #7692bb;
+    margin-top: 6%;
+    margin-left: 18%;
+    border-radius: 5px;
+    border:none;
+    color: #f2f2f2;
+}
+.btn-solicitar:hover{
+
+    background-color: #272727;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+.mot-cadastro-div-visible{
+    width: 60%;
+    height: 50%;
+    position: fixed;
+    left: 10%;
+    top: 12em;
+    background-color:#272727;
+    border-radius: 10px;
+}
+.mot-cadastro-div-hidden{
+    width: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.motorista-solic-title{
+    width: 100%;
+    float: left;
+    color: #f2f2f2;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 1.8em;
+}
+
+
+
+
+.motorista-dados{
+    float: left;
+    width: 49%;
+    margin-top: 2%;
+}
+.motorista-veiculo{
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+
+}
+
+.motorista-solic-end-title{
+    width: 99.5%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+
+.motorista-cad-nome{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    
+}
+
+.motorista-cad-sexo{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    
+}
+
+
+
+.motorista-cad-tel{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    
+}
+
+.motorista-cad-cpf{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    
+}
+
+.motorista-cad-nasc{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 3%;
+    
+}
+
+
+.motorista-cad-marca{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+.motorista-cad-mod{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+.motorista-cad-cor{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+.motorista-cad-placa{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+.motorista-cad-viat{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+.motorista-cad-ano{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+}
+
+
+
+
+.mot-cad-inp-nome{
+    width: 45%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+.mot-sel-sexo{
+    width: 30%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+.mot-cad-inp-cpf{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-cad-inp-nasc{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+.mot-cad-inp-tel{
+    width: 30%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 10%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-sel-status{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+.mot-cad-inp-marca{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-cad-inp-mod{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+.mot-sel-ano{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 10%;
+
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-cad-inp-cor{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-cad-inp-placa{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+.mot-cad-inp-viat{
+    width: 20%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    margin-right: 20%;
+    font-size: 0.9em;
+    border-radius: 3px;
+
+}
+
+
+.divisoriaViagem{
+    float: left;
+    width: 1px;
+    background-color: #f2f2f2;
+    height: 26vh;
+    margin-top: 5%;
+}
+
+
+#btn-efet-mot-cad{
+    width: 120px;
+    height: 2.5em;
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    background-color: #7692bb;
+    border: none;
+    border-radius: 3px;
+    color: #f2f2f2;
+}
+#btn-efet-mot-cad:hover{
+    cursor: pointer;
+    background-color: #4673b6;
+}
+
+#btn-sair-mot-cad{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1.5em;
+    border-radius: 100%;
+    color: #f2f2f2;
+
+}
+
+#btn-sair-mot-cad:hover{
+    background-color: #dd5151;
+    cursor: pointer;
+}

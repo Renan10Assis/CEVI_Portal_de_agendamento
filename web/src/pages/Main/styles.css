@@ -1,5 +1,5 @@
 #main-container{  
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
 }
@@ -15,70 +15,18 @@
 
 #main_content{
     width: 100%;
-    height: 100vh;
+    max-height: 50vh;
     float: left;
-    margin-top: 13.5vh;
 }
 
 
-#main-footer{
+#footer-content{
     width: 100%;
-    height: 20vh;
     float: left;
 
 }
 
 
-#logout-visible{
-    width: 200px;
-    height: 100px;
-    position: fixed;
-    float: left;
-    margin-left: 40%;
-    margin-top: 35vh;
-    visibility: visible;
-    background-color: #eed962;
-    border-radius: 5%;
-    text-align: center;
-}
-#logout-hidden{
-    visibility: hidden;
-    position: fixed;
-    float: left;
-
-}
-
-.logout-message{
-    color: #272727;
-    float: left;
-    width: 100%;
-    margin-top: 5%;
-}
-
-.btn-logout{
-    float: left;
-    width: 40%;
-    height: 30%;
-    margin-top: 10%;
-    margin-left: 7%;
-    border-radius: 10px;
-    border: none;
-    background-color: #f2f2f2;
-    cursor: default;
-}
-
-.btn-logout:hover{
-    float: left;
-    width: 40%;
-    height: 30%;
-    margin-top: 10%;
-    margin-left: 7%;
-    border-radius: 10px;
-    border: none;
-    background-color: #9cb0ce;
-    cursor: pointer;
-
-}
 
 #top-level{
     float: left;
@@ -89,13 +37,13 @@
 
 #left-main-content{
     width:75%;
-    height: 80%;
     float: left;
+    position: static;
 }
 
 #lista-viagens{
     width: 100%;
-    height: 100%;
+    height: 50em;
     float: left;
     overflow: scroll;
 }
@@ -105,7 +53,6 @@
     height: 20%;
     float: left;
     background-color: #faf1be;
-    position: static;
 }
 
 #labels-grid-viagem{
@@ -123,76 +70,85 @@
 
 }
 .os-lbl-grid{
+    width: 6%;
     margin-top: 2px;
     float: left;
-    margin-left: 0.5%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 .dtSol-lbl-grid{
+    width: 9.5%;
     margin-top: 2px;
     float: left;
-    margin-left: 4%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 
 .solic-lbl-grid{
+    width: 15%;
     margin-top: 2px;
     float: left;
-    margin-left: 3%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 .pass-lbl-grid{
+    width: 9.5%;
     margin-top: 2px;
     float: left;
-    margin-left: 9%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 .telPass-lbl-grid{
+    width: 10%;
     margin-top: 2px;
     float: left;
-    margin-left: 4%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 .emp-lbl-grid{
+    width: 10%;
     margin-top: 2px;
     float: left;
-    margin-left: 1.5%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 .dtEmb-lbl-grid{
+    width: 10%;
     margin-top: 2px;
     float: left;
-    margin-left: 10%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 
 .mot-lbl-grid{
+    width: 11.5%;
     margin-top: 2px;
     float: left;
-    margin-left: 3.5%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;
 }
 
 .status-lbl-grid{
+    width: 8%;
     margin-top: 2px;
     float: left;
-    margin-left: 9.5%;
+    margin-left: 1%;
     text-align: left;
     color: #272727;
     font-size: 0.8em;

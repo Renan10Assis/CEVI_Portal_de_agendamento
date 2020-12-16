@@ -1,0 +1,391 @@
+#solicitar-viagem-container{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+
+
+.solicitar-viagem-div{
+    width: 60%;
+    position: fixed;
+    left: 14%;
+    top: 13.5%;
+    background-color:#f2f2f2;
+}
+
+.viagem-solic-title{
+    width: 100%;
+    float: left;
+    color: #f2f2f2;
+    background-color: #272727;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1.8em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.viagem-solic-pass{
+    width: 21%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 1%;
+    color: #272727;
+
+}
+
+.via-inp-pass{
+    width: 50%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 9%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+.viagem-solic-tel{
+    width: 21%;
+    float: left;
+    margin-left: 5%;
+    font-size: 0.9em;
+    margin-bottom: 1%;
+    color: #272727;
+
+}
+
+.via-inp-tel{
+    width: 16%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+.viagem-solic-empresa{
+    width: 8%;
+    float: left;
+    margin-left: 1%;
+    font-size: 0.9em;
+    margin-bottom: 1%;
+    color: #272727;
+
+}
+
+.sel-inp-emp{
+    width: 24%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 20%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+.viagem-solic-dtHr{
+    width: 21%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.via-inp-dtHr{
+    width: 22%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-right: 30%;
+
+}
+
+
+.viagem-solic-obs{
+    width: 21%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+.via-inp-obs{
+    width: 50%;
+    height: 3em;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    font-size: 0.9em;
+    resize: none;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+
+.viagem-ender-origem{
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+    background-color: #ebe9cd;
+    padding-bottom: 5%;
+
+}
+.viagem-ender-destino{
+    float: left;
+    width: 50%;
+    margin-top: 2%;
+    background-color: rgb(223, 243, 234);
+    padding-bottom: 5%;
+}
+
+.viagem-solic-endOri-title{
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 4%;
+    color: #272727;
+    background-color: #e7e4b2;
+
+
+}
+
+.viagem-solic-endDest-title{
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 4%;
+    color: #272727;
+    background-color: rgb(181, 235, 210);
+
+
+}
+
+
+#radio-empresa-ender{
+    float: left;
+    width: 2%;
+    margin-left: 10%;
+    margin-top: 2px;
+    
+    
+}
+#radio-empresa-ender:hover{
+    cursor: pointer;
+}
+#radio-outro-ender{
+    float: left;
+    width: 2%;
+    margin-left: 10%;
+    margin-top: 2px;
+
+}
+#radio-outro-ender:hover{
+    cursor: pointer;
+
+}
+
+.viagem-solic-emp-end{
+    float: left;
+    margin-left: 1%;
+    width: 40%;
+    font-size: 0.9em;
+    color: #272727;
+    
+
+}
+.viagem-solic-emp-end:hover{
+    cursor: pointer;
+}
+
+.viagem-solic-outro-end{
+    float: left;
+    margin-left: 1%;
+    width: 30%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.viagem-solic-outro-end:hover{
+    cursor: pointer;
+}
+
+.viagem-solic-cep{
+    float: left;
+    width: 19%;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+
+}
+
+.via-inp-cep{
+    float: left;
+    width: 25%;
+    margin-left: 1%;
+    margin-right: 40%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+
+}
+
+.viagem-solic-logra{
+    float: left;
+    width: 19%;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+.via-inp-logra{
+    float: left;
+    width: 60%;
+    margin-left: 1%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+
+}
+
+
+.viagem-solic-bairro{
+    float: left;
+    width: 19%;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.via-inp-bairro{
+    float: left;
+    width: 35%;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+
+}
+
+.viagem-solic-num{
+    float: left;
+    width: 5%;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.via-inp-num{
+    float: left;
+    width: 16.5%;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+
+.viagem-solic-uf{
+    float: left;
+    width: 5%;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.sel-inp-uf{
+    float: left;
+    width: 16.5%;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size: 0.8em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+
+.viagem-solic-cidade{
+    float: left;
+    width: 12%;
+    margin-left: 3%;
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: #272727;
+
+}
+
+.sel-inp-cidade{
+    float: left;
+    width: 42%;
+    margin-left: 1%;
+    margin-top: 5%;
+    font-size: 0.8em;
+    border-radius: 3px;
+    color: #272727;
+
+}
+
+#btn-efet-solic{
+    width: 50%;
+    height: 3em;
+    float: left;
+    background-color: #272727;
+    border: none;
+    color: #f2f2f2;
+}
+#btn-efet-solic:hover{
+    cursor: pointer;
+    background-color: #6cc077;
+}
+
+#btn-sair-solic{
+    width: 50%;
+    height: 3em;
+    float: left;
+    background-color: #272727;
+    border: none;
+    color: #f2f2f2;
+
+}
+
+#btn-sair-solic:hover{
+    background-color: #c06c6c;
+    cursor: pointer;
+}

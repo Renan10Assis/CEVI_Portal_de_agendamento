@@ -1,6 +1,47 @@
 #painel-container{
     width: 25%;
-    height: 100%;
+    height: 60em;
     float: right;
     background-color: #474747;
+}
+
+#bloco-em-transito{
+    width: 100%;
+    height: 50%;
+    float: left;
+    overflow-y: scroll;
+}
+
+#bloco-em-transito{
+    width: 100%;
+    height: 49%;
+    float: left;
+    overflow-y: scroll;
+}
+
+.painel-divisoria{
+    width: 100%;
+    height: 1%;
+    float: left;
+    background-color: #f2f2f2;
+    
+}
+
+#bloco-proximas-viagens{
+    width: 100%;
+    height: 50%;
+    float: left;
+    overflow-y: scroll;
+}
+
+
+.title-painel-viagens{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 0.9em; 
+    position: static;
+    background-color: #272727;
 }

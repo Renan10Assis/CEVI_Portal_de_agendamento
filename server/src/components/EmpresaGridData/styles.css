@@ -1,0 +1,66 @@
+.grid-emp-container{
+    width: 100%; 
+    height: auto;
+    float: left; 
+}
+
+
+.grid-emp-read{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #a5a18b;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.grid-emp-read:hover{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #E9DA8F;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+.grid-emp-read-hidden{
+    float: left;
+    visibility: hidden;
+    position: absolute;
+
+}
+
+
+.rotulo-emp-nome{
+    width: 39%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+}
+
+
+.rotulo-emp-cnpj{
+    width: 19%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+}
+
+
+.rotulo-emp-endereco{
+    width: 39%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+}

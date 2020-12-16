@@ -1,0 +1,88 @@
+.grid-user-container{
+    width: 100%; 
+    height: auto;
+    float: left; 
+}
+
+
+.grid-user-read{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #a5a18b;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.grid-user-read:hover{
+    width: 100%;
+    float: left;
+    text-align: left;
+    background-color: #E9DA8F;
+    cursor: pointer;
+    transition: 0.3s;
+    position: static;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+.grid-user-read-hidden{
+    float: left;
+    visibility: hidden;
+    position: static;
+
+}
+
+
+.rotulo_usu_imagem{
+    width: 5%;
+    float: left;
+    border-radius: 100%;
+    margin-left: 1%;
+}
+.rotulo_usu_nome{
+    width: 15%;
+    float: left;
+    font-size: 1em;
+    color: #272727;
+    margin-left: 1%;
+    margin-top: 1.5%;
+}
+.rotulo_usu_empresa{
+    width: 30%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+    margin-top: 1.5%;
+}
+.rotulo_usu_email{
+    width: 15%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+    margin-top: 1.5%;
+}
+.rotulo_usu_tipo{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-top: 1.5%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.rotulo_usu_status{
+    width: 10%;
+    float: left;
+    color: #272727;
+    font-size: 1em;
+    margin-left: 1%;
+    margin-top: 1.5%;
+}

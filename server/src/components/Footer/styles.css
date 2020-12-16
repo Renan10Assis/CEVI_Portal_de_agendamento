@@ -1,0 +1,75 @@
+#rodape{
+    width: 100%;
+    height: 40vh;
+    float: left;
+    background-color: #272727;
+
+}
+
+.sup-txt{
+    margin-top: 80px;
+    margin-left: 5%;
+    color: #B98602;
+    float: left;
+    width: 100%;
+    
+}
+.cevi-txt{
+    margin-top: 80px;
+    color: #B98602;
+    float: left;
+    width: 100%;
+    
+}
+
+.txt-link{
+    color: #E9DA8F;
+    float: left;
+    width: 100%;
+    margin-top: 1%;
+}
+#side{
+    width: 20%;
+    height: 100%;
+    float: left;
+    visibility: visible;
+}
+#side-hidden{
+    width: 20%;
+    height: 100%;
+    float: left;
+    visibility: hidden;
+}
+#middle{
+    width: 60%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.txt-contato{
+    color: #f2f2f2;
+    float: left;
+    width: 100%;
+    font-weight: normal;
+    margin-left: 5%;
+}
+.txt-first{
+    margin-top: 8%;
+    float: left;
+    margin-left: 5%;
+    font-size: 1em;
+    color: #f2f2f2;
+}
+.txt-slogan{
+    font-size: 1em;
+    color: #f2f2f2;
+}
+
+.txt-last{
+    margin-top: 10%;
+    color: #E9DA8F;
+    float: left;
+    width: 100%;
+    font-weight: normal;
+}

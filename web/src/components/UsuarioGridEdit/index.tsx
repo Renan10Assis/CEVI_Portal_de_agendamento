@@ -170,15 +170,15 @@ const UsuarioGridEdit = () => {
 
                 <div className="secaoUsuDados">
 
-                    <span className="edit-rotulo">Nome de usuário</span>
+                    <span className="edit-usu-rotulo">Nome de usuário</span>
                     <span className={editData ? "edit-usunome-hidden" : "edit-usunome"}>{initialUser.usu_nome}</span>
                     <input type="text" className={!editData ? "edit-usunome-hidden" : "edit-usunome"} placeholder={initialUser.usu_nome} onChange={handleUserNameChange} />
 
-                    <span className="edit-rotulo">Email</span>
+                    <span className="edit-usu-rotulo">Email</span>
                     <span className="edit-usu-email">{initialUser.usu_email}</span>
 
 
-                    <span className="edit-rotulo">Tipo de usuário</span>
+                    <span className="edit-usu-rotulo">Tipo de usuário</span>
                     <span className={editData ? "tipo-user-select-hidden" : "edit-usu-tipo"}>{initialUser.usu_tipo}</span>
                     <select value={tipoUserOption} disabled={editData ? false : true} className={authUserState.user.usu_tipo === "Administrador" && editData ? "tipo-user-select" : "tipo-user-select-hidden"} onChange={handleTipoUserOptionChange}>
                         <option value="Administrador">Administrador</option>
@@ -187,21 +187,21 @@ const UsuarioGridEdit = () => {
 
                     </select>
 
-                    <span className="edit-rotulo">Status</span>
-                    <span className={editData ? "status-select-hidden" : "edit-usu-status"}>{initialUser.usu_status}</span>
-                    <select value={userStatusOption} disabled={editData ? false : true} className={authUserState.user.usu_tipo === "Administrador" && editData ? "status-select" : "status-select-hidden"} onChange={handleStatusOptionChange}>
+                    <span className="edit-usu-rotulo">Status</span>
+                    <span className={editData ? "usu-status-select-hidden" : "edit-usu-status"}>{initialUser.usu_status}</span>
+                    <select value={userStatusOption} disabled={editData ? false : true} className={authUserState.user.usu_tipo === "Administrador" && editData ? "usu-status-select" : "usu-status-select-hidden"} onChange={handleStatusOptionChange}>
                         <option value={listaStatus.ativo}>{listaStatus.ativo}</option>
                         <option value={listaStatus.inativo}>{listaStatus.inativo}</option>
 
                     </select>
                 </div>
-                <span className="divisoria"></span>
+                <span className="divisoria-usu"></span>
 
-                <div className="secaoEmpDados">
+                <div className="secaoUsuEmpDados">
 
-                    <span className="edit-rotulo">Empresa</span>
-                    <span className={editData?"emp-select-hidden":"emp-label-data"}>{userEmp.emp_nomeFantasia}</span>
-                    <select id="escolha" disabled={editData ? false : true} className={authUserState.user.usu_tipo.toLowerCase() === "administrador" && editData? "emp-select" : "emp-select-hidden"} onChange={handleEmpresaOptionChange}>
+                    <span className="edit-usu-rotulo">Empresa</span>
+                    <span className={editData?"usu-emp-select-hidden":"usu-emp-label-data"}>{userEmp.emp_nomeFantasia}</span>
+                    <select id="escolha" disabled={editData ? false : true} className={authUserState.user.usu_tipo.toLowerCase() === "administrador" && editData? "usu-emp-select" : "usu-emp-select-hidden"} onChange={handleEmpresaOptionChange}>
                         {empresaState.map(empresa => {
                             return <option key={empresa.emp_id} value={empresa.emp_id}>{empresa.emp_nomeFantasia}</option>
                         }
@@ -209,22 +209,22 @@ const UsuarioGridEdit = () => {
 
                     </select>
 
-                    <span className="edit-rotulo">CNPJ:</span>
-                    <span className="emp-label-data">{userEmp.emp_cnpj}</span>
+                    <span className="edit-usu-rotulo">CNPJ:</span>
+                    <span className="usu-emp-label-data">{userEmp.emp_cnpj}</span>
 
-                    <span className="edit-rotulo">Endereço da empresa:</span>
-                    <span className="emp-label-data">{userEmp.emp_endereco}</span>
+                    <span className="edit-usu-rotulo">Endereço da empresa:</span>
+                    <span className="usu-emp-label-data">{userEmp.emp_endereco}</span>
 
 
                 </div>
 
-                <div className="secaoButtons">
-                    <span id="msgStatus">{msg}</span>
-                    <FiCheck name="submit" id="icon-confirm" visibility={authUserState.user.usu_tipo === "Administrador" && editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={handleUpdateData} />
-                    <FiEdit id="icon-edit" visibility={authUserState.user.usu_tipo === "Administrador" && !editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={() => setEditData(true)} />
+                <div className="secaoUsuButtons">
+                    <span id="msgUsuStatus">{msg}</span>
+                    <FiCheck name="submit" id="icon-usu-confirm" visibility={authUserState.user.usu_tipo === "Administrador" && editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={handleUpdateData} />
+                    <FiEdit id="icon-usu-edit" visibility={authUserState.user.usu_tipo === "Administrador" && !editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={() => setEditData(true)} />
                 </div>
 
-                <div className="secaoRetrair" onClick={handleRetrairClick}><FiArrowUpCircle />Fechar</div>
+                <div className="secaoUsuRetrair" onClick={handleRetrairClick}><FiArrowUpCircle />Fechar</div>
             </form>
         </div>
     );

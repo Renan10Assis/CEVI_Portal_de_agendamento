@@ -1,0 +1,71 @@
+#confirm-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.confirm-box {
+    width: 30%;
+    background-color: rgb(255, 240, 155);
+    position: fixed;
+    top: 30%;
+    left: 35%;
+}
+
+.lbl-confirm-question {
+    color: #272727;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.lbl-confirm-rotulo {
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    width: 30%;
+    margin-bottom: 0.5%;
+    margin-left: 5%;
+}
+.lbl-confirm-dados {
+    float: left;
+    font-size: 0.8em;
+    color: #272727;
+    width: 50%;
+    margin-bottom: 0.5%;
+    margin-left: 1%;
+}
+
+.btn-confirm-yes {
+    width: 50%;
+    height: 3em;
+    border: none;
+    background-color: #272727;
+    color: #f2f2f2;
+    float: left;
+    margin-top: 1.5%;
+}
+
+.btn-confirm-yes:hover {
+    cursor: pointer;
+    background-color: #6cc077;
+}
+
+.btn-confirm-no {
+    margin-top: 1.5%;
+    width: 50%;
+    height: 3em;
+    border: none;
+    background-color: #272727;
+    color: #f2f2f2;
+    float: left;
+}
+
+.btn-confirm-no:hover {
+    cursor: pointer;
+    background-color: #c06c6c;
+}

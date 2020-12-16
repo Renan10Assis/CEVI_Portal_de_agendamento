@@ -17,36 +17,33 @@ table.string('via_status').notNullable(); */
 
 class ViagemController {
     async index(request: Request, response: Response) {
-
+	const{orderBy}=request.body;
         const trx = await knex.transaction();
-       
-        let viagens = await trx('viagens as v')
-        .join('empresas as empSol', 'empSol.emp_id', 'userSol.usu_emp_id')
-        .join('empresas as empVia', 'empVia.emp_id', 'v.via_emp_id')
-        .join('usuarios as userSol', 'userSol.usu_id', 'v.via_usu_id')
-        .select(
-        'v.via_os',
-        'v.via_mot_id',
-        'v.via_nomePassageiro',
-        'v.via_telPassageiro',
-        'v.via_end_origem',
-        'v.via_end_destino',
-        'v.via_dataHora_solicitacao',
-        'v.via_dataHora_embarque',
-        'v.via_observacao',
-        'v.via_status',
-        'userSol.usu_nome as solicitante',
-        'empSol.emp_nomeFantasia as empresa_viagem',
-        'empVia.emp_nomeFantasia as empresa_solicitante'
-        
-        
-        );
-        
-   
-        
-        //.orderBy("via_dataHora_embarque", "desc");
 
-            
+        let viagens = await trx('viagens as v')
+            .join('empresas as empSol', 'empSol.emp_id', 'userSol.usu_emp_id')
+            .join('empresas as empVia', 'empVia.emp_id', 'v.via_emp_id')
+            .join('usuarios as userSol', 'userSol.usu_id', 'v.via_usu_id')
+            .select(
+                'v.via_os',
+                'v.via_mot_id',
+                'v.via_nomePassageiro',
+                'v.via_telPassageiro',
+                'v.via_end_origem',
+                'v.via_end_destino',
+                'v.via_dataHora_solicitacao',
+                'v.via_dataHora_embarque',
+                'v.via_observacao',
+                'v.via_status',
+                'userSol.usu_nome as solicitante',
+                'empSol.emp_nomeFantasia as empresa_solicitante',
+                'empVia.emp_nomeFantasia as empresa_viagem'
+
+
+            )
+            .orderBy(orderBy?orderBy:"via_dataHora_solicitacao", "desc");
+
+
         await trx.commit().catch(err => (console.log(err)));
 
         return response.json(viagens);
@@ -54,13 +51,32 @@ class ViagemController {
 
     async show(request: Request, response: Response) {
         const { emp_id } = request.params;
+        const{orderBy}=request.body;
 
         const trx = await knex.transaction();
 
-        const viagens = await trx('viagens')
+        let viagens = await trx('viagens as v')
+            .join('empresas as empSol', 'empSol.emp_id', 'userSol.usu_emp_id')
+            .join('empresas as empVia', 'empVia.emp_id', 'v.via_emp_id')
+            .join('usuarios as userSol', 'userSol.usu_id', 'v.via_usu_id')
             .where('via_emp_id', emp_id)
-            .select('*')
-            .orderBy('via_dataHora_embarque', 'desc');
+            .select(
+                'v.via_os',
+                'v.via_mot_id',
+                'v.via_nomePassageiro',
+                'v.via_telPassageiro',
+                'v.via_end_origem',
+                'v.via_end_destino',
+                'v.via_dataHora_solicitacao',
+                'v.via_dataHora_embarque',
+                'v.via_observacao',
+                'v.via_status',
+                'userSol.usu_nome as solicitante',
+                'empSol.emp_nomeFantasia as empresa_solicitante',
+                'empVia.emp_nomeFantasia as empresa_viagem'
+            )
+            .orderBy(orderBy?orderBy:"via_dataHora_solicitacao", "desc");
+
 
         await trx.commit().catch(err => (console.log(err)));
 
@@ -120,17 +136,17 @@ class ViagemController {
             via_mot_id
         } = request.body;
 
-	const data={	
-	    via_os: Number(via_os),
-	    via_mot_id: String(via_mot_id)
-	}
-	
+        const data = {
+            via_os: Number(via_os),
+            via_mot_id: String(via_mot_id)
+        }
+
         const trx = await knex.transaction();
         let res;
-        const existeViagem = String(await trx('viagens').where('via_os', via_os).select('*')) ? true : false;
+        const existeViagem = String(await trx('viagens').where('via_os', data.via_os).select('*')) ? true : false;
 
         if (existeViagem) {
-            await trx('viagens').where('via_os', via_os).update({ via_mot_id });
+            await trx('viagens').where('via_os', data.via_os).update({ via_mot_id: data.via_mot_id });
             res = { success: 'Motorista atribuído com sucesso!' };
         } else {
             res = { erro: 'OS não localizado!' };
@@ -147,12 +163,17 @@ class ViagemController {
             via_status
         } = request.body;
 
+        const data = {
+            via_os: Number(via_os),
+            via_status: String(via_status)
+        }
+
         const trx = await knex.transaction();
         let res;
-        const existeViagem = String(await trx('viagens').where('via_os', via_os).select('*')) ? true : false;
+        const existeViagem = String(await trx('viagens').where('via_os', data.via_os).select('*')) ? true : false;
         if (existeViagem) {
-            await trx('viagens').where('via_os', via_os).update({ via_status });
-            res = { success: 'Status atualizados com sucesso!' };
+            await trx('viagens').where('via_os', data.via_os).update({ via_status: data.via_status });
+            res = { success: 'Status atualizado com sucesso!' };
         } else {
             res = { erro: 'OS não localizado!' };
         }

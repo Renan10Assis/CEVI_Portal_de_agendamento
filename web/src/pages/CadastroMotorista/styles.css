@@ -29,56 +29,6 @@
 }
 
 
-#logout-visible{
-    width: 200px;
-    height: 100px;
-    position: fixed;
-    float: left;
-    margin-left: 40%;
-    margin-top: 35vh;
-    visibility: visible;
-    background-color: #eed962;
-    border-radius: 5%;
-    text-align: center;
-}
-#logout-hidden{
-    visibility: hidden;
-    position: fixed;
-    float: left;
-
-}
-
-.logout-message{
-    color: #272727;
-    float: left;
-    width: 100%;
-    margin-top: 5%;
-}
-
-.btn-logout{
-    float: left;
-    width: 40%;
-    height: 30%;
-    margin-top: 10%;
-    margin-left: 7%;
-    border-radius: 10px;
-    border: none;
-    background-color: #f2f2f2;
-    cursor: default;
-}
-
-.btn-logout:hover{
-    float: left;
-    width: 40%;
-    height: 30%;
-    margin-top: 10%;
-    margin-left: 7%;
-    border-radius: 10px;
-    border: none;
-    background-color: #9cb0ce;
-    cursor: pointer;
-
-}
 
 #top-level{
     float: left;
@@ -105,7 +55,6 @@
     height: 20%;
     float: left;
     background-color: #faf1be;
-    position: static;
 }
 
 #labels-grid-motorista{
@@ -117,6 +66,13 @@
 
 }
 
+
+.rotulo-motorista-hidden{
+    width: 0%;
+    float: left;
+    visibility: hidden;
+
+}
 
 .rotulo-m-lbl{
     width: 100%;

@@ -1,4 +1,4 @@
-.grid-container{
+#grid-data-container{
     width: 100%; 
     height: auto;
     float: left; 
@@ -34,7 +34,7 @@
 .grid-read-hidden{
     float: left;
     visibility: hidden;
-    position: static;
+    position: absolute;
 
 }
 
@@ -44,52 +44,83 @@
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }
 .rotulo_dtSol{
-    width: 10.5%;
+    width: 10%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
+
 }
 .rotulo_sol{
     width: 15%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
+    
 }
 .rotulo_emp{
-    width: 15%;
+    width: 10%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
+
+
 }
 .rotulo_nomePass{
     width: 10%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }
 .rotulo_telPass{
     width: 10%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }
 .rotulo_dtEmb{
-    width: 10.5%;
+    width: 10%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }
 .rotulo_mot{
-    width: 13%;
+    width: 12%;
     float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }
 .rotulo_status{
     width: 8%;
-    float: right;
+    float: left;
     font-size: 0.8em;
     color: #272727;
+    margin-left: 1%;
+    max-height: 2.5em;
+    overflow: hidden;
 }

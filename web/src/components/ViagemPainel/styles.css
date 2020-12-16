@@ -1,0 +1,81 @@
+
+
+
+.viagem-quick-box{
+    width: 99%;
+    float: left;
+    border-radius: 10px;
+    border: 1px solid #272727;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+.viagem-quick-box:hover{
+    background-color: #272727;
+}
+
+.viagem-info{
+    width: 75%;
+    float: left;
+}
+
+.painel-lbl-inline{
+    width: 100%;
+    float: left;
+}
+
+.lbl-quick-viagem{
+    float: left;
+    font-size: 0.7em;
+    color: #f2f2f2;
+    margin-left: 2%;
+}
+
+
+.lbl-quick-viagem-data{
+    float: left;
+    font-size: 0.7em;
+    color: #E1C048;
+    margin-left: 0.5%;
+}
+
+.viagem-action-btn{
+    width: 25%;
+    float: left;
+}
+
+
+#btn-cancelar-viagem{
+    width: 70%;
+    height: 2em;
+    float: right;
+    font-size: 0.7em;
+    margin-top: 10%;
+    margin-right: 15%;
+    border: none;
+    border-radius: 0.2em;
+    background-color: #8f6e6e;
+
+}
+#btn-cancelar-viagem:hover{
+    cursor: pointer;
+    background-color: #c06c6c;
+
+}
+
+#btn-concluir-viagem{
+    width: 70%;
+    height: 2em;
+    float: right;
+    font-size: 0.7em;
+    margin-top: 10%;
+    margin-right: 15%;
+    border: none;
+    border-radius: 0.2em;
+    background-color: #728f6e;
+}
+#btn-concluir-viagem:hover{
+    cursor: pointer;
+    background-color: #6cc077;
+
+}

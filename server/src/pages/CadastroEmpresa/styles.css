@@ -1,0 +1,152 @@
+#main-container{  
+    height: 100vh;
+    width: 100%;
+
+}
+
+
+#main-header{
+    width: 100%;
+    height: 10vh;
+    float: left;
+
+    
+}
+
+#main_content{
+    width: 100%;
+    height: 100vh;
+    float: left;
+    margin-top: 13.5vh;
+}
+
+
+#main-footer{
+    width: 100%;
+    height: 20vh;
+    float: left;
+
+}
+
+
+#logout-visible{
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    float: left;
+    margin-left: 40%;
+    margin-top: 35vh;
+    visibility: visible;
+    background-color: #eed962;
+    border-radius: 5%;
+    text-align: center;
+}
+#logout-hidden{
+    visibility: hidden;
+    position: fixed;
+    float: left;
+
+}
+
+.logout-message{
+    color: #272727;
+    float: left;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.btn-logout{
+    float: left;
+    width: 40%;
+    height: 30%;
+    margin-top: 10%;
+    margin-left: 7%;
+    border-radius: 10px;
+    border: none;
+    background-color: #f2f2f2;
+    cursor: default;
+}
+
+.btn-logout:hover{
+    float: left;
+    width: 40%;
+    height: 30%;
+    margin-top: 10%;
+    margin-left: 7%;
+    border-radius: 10px;
+    border: none;
+    background-color: #9cb0ce;
+    cursor: pointer;
+
+}
+
+#top-level{
+    float: left;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+}
+
+#left-main-content{
+    width:75%;
+    height: 80%;
+    float: left;
+}
+
+#lista-motoristas{
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: scroll;
+}
+
+#search-emp-block{
+    width: 100%;
+    height: 20%;
+    float: left;
+    background-color: #faf1be;
+}
+
+#labels-grid-empresa{
+    width: 100%;
+    height: 6vh;
+    background-color: #c9d1dd;
+    float: left;
+    text-align: center;
+
+}
+
+
+.rotulo-e-lbl{
+    width: 100%;
+    float: left;
+    background-color: #9cb0ce;
+
+}
+
+.rotulo-e-nome{
+    width: 20%;
+    float: left;
+    text-align: left;
+    color: #545e74;
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+
+.rotulo-e-cnpj{
+    width: 12%;
+    float: left;
+    text-align: left;
+    color: #545e74;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+}
+
+.rotulo-e-ender{
+    width: 10%;
+    float: left;
+    text-align: left;
+    color: #545e74;
+    margin-top: 0.5%;
+    margin-left: 1%;
+}

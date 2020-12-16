@@ -45,7 +45,7 @@ const UsuarioGridData: React.FC<Usuario> = (props) => {
         <div id="grid-user-container">
 
 
-            <div className={navigationState.usuarioIDClicked ? "grid-user-read-hidden" : "grid-user-read"} onClick={handleViewUserDetails}>
+            <div className="grid-user-read" onClick={handleViewUserDetails}>
 
                 <img className="rotulo_usu_imagem" src={usuarioProp.usu_imagem?usuarioProp.usu_imagem:profile_image}/>
                 <span className="rotulo_usu_nome">{usuarioProp.usu_nome}</span>

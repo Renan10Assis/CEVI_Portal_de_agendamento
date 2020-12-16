@@ -1,0 +1,31 @@
+.estat-container{
+    float: left;
+    height: 100%;
+}
+.estat-secao{
+    width: 20%;
+    float: left;
+}
+.estat-rotulo-label{
+    width: 85%;
+    float: left;
+    margin-top: 2px;
+    color: #272727;
+    font-size: 0.8em;
+}
+
+.estat-label{
+    width: 10%;
+    float: left;
+    color: #2b3d6e;
+    margin-top: 2px;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+.estat-title{
+    width: 100%;
+    float: left;
+    color: #272727;
+    margin-top: 10px;
+}

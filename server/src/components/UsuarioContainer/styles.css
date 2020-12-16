@@ -1,0 +1,95 @@
+#usuario-container{
+    width: 100%;
+    height: 100%;
+}
+
+#user-info{
+    height: 100%;
+    width: 90%;
+    float: left;
+
+}
+
+#profile-image{
+    height: 100%;
+    width: 10%;
+    float: left;
+}
+
+.label-user{
+    float: right;
+    margin: 5% 0.5% 0 0.5%;
+    
+}
+
+
+#image-user{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #272727;
+    border-radius: 30px;
+    float: right;
+    margin-top: 15%;
+    margin-right: 10%;
+
+}
+
+#image-user:hover{
+    border-color: #f2f2f2;
+}
+
+
+#profile-options{
+    width: 100px;
+    height: 50px;
+    background-color: #272727;
+    position: relative;
+    visibility: hidden;
+}
+
+
+.espaco{
+    float: right;
+}
+
+.ul-options{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.li-option{
+    width: 100%;
+    margin-top: 3%;
+    float: left;
+    color: #f2f2f2;
+    font-size: 0.9em;
+    cursor: default;
+
+}
+.li-option:hover{
+    font-size: 0.9em;
+    color: #E1C048;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 3%;
+    float: left;
+}
+
+.options_visible{
+    
+    position: relative;
+    visibility: visible;
+    width: 16vh;
+    height: 7vh;
+    background-color: #272727;
+    border-bottom-left-radius: 2vh;
+    float: right;
+}
+
+.options_hidden{
+    visibility: hidden;
+    position: relative;
+}
+
