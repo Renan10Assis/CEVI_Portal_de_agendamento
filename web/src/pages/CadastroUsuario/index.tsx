@@ -15,7 +15,9 @@ import { Empresa } from '../../store/ducks/types/Empresa';
 import { startSetEmpresas } from '../../store/ducks/actions/Empresa';
 import UsuarioGridEdit from '../../components/UsuarioGridEdit';
 import SairConfirm from '../../components/SairConfirm';
-import { startSetNavigation } from '../../store/ducks/actions/Navigation';
+import NovoUsuario from '../../components/NovoUsuario';
+import EstatUsuarioBloco from '../../components/EstatUsuarioBloco';
+import UsuarioGridCreate from '../../components/UsuarioGridCreate';
 
 
 
@@ -55,7 +57,8 @@ const CadastroUsuario = () => {
         <div id="main-container">
 
             {navigationState.profileSairClicked ? <SairConfirm /> : null/*div que aparece ao clica em sair*/}
-
+            {navigationState.usuarioIDClicked? <UsuarioGridEdit />:null}
+            {navigationState.novoUsuClicked ? <UsuarioGridCreate /> : null}
 
             <div id={navigationState.profileSairClicked ? "div-enable" : "div-disable"}>
                 <Header />
@@ -63,13 +66,16 @@ const CadastroUsuario = () => {
                 <div id="left-main-content">
                     <div id="search-block">
                         <SearchBlockUser />
+                        <span className="divisoriaUsuario"></span>
+                        <EstatUsuarioBloco/>
+                        <span className="divisoriaUsuario"></span>
+                        <NovoUsuario/>
                     </div>
 
                     <div id="labels-grid-usuario">
                         <span className={"lista-user-lbl"}>Lista de Usuários</span>
 
                     </div>
-                    <UsuarioGridEdit />
                     <div id="lista-usuarios">
                         {usuariosState.map(usuario => {
                             if (usuario.usu_nome.toLowerCase().includes(navigationState.searchUserTxt.toLowerCase()) && usuario.usu_status.includes(navigationState.searchUserStatus)) {

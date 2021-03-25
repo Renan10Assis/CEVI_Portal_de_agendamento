@@ -1,4 +1,4 @@
-#grid-usuario-container {
+#grid-create-usuario-container {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -7,7 +7,7 @@
 
 }
 
-.grid-user-edit {
+.grid-user-create {
     width: 55%;
     position: fixed;
     top:22%;
@@ -17,8 +17,15 @@
     border-top-right-radius: 1em ;
 }
 
+#novo-usu-title{
+    width: 70%;
+    float: right;
+    margin-bottom: 1%;
+    color: #272727;
 
-.edit-usu-imagem{
+}
+
+.create-usu-imagem{
     float: left;
     height: 270px;
     top: 18%;
@@ -30,7 +37,7 @@
 
 }
 
-#divisoria-edit-usuario{
+#divisoria-create-usuario{
     float: left;
     width: 65%;
     height: 1px;
@@ -39,20 +46,20 @@
     margin-bottom: 1%;
 }
 
-.secaoUsuDados {
+.secaoUsuDadosCreate {
     width: 70%;
     float: right;
 
 }
 
-.edit-usu-rotulo{
+.create-usu-rotulo{
     width: 25%;
     float: left;
     color: #272727;
     margin-bottom: 1%;
 }
 
-.edit-usuario-dados{
+.create-usuario-dados{
     width: 60%;
     margin-left: 1%;
     float: left;
@@ -60,7 +67,7 @@
     margin-bottom: 1%;
 }
 
-.edit-sel-usuario-dados{
+.create-sel-usuario-dados{
     width: 30%;
     margin-left: 1%;
     margin-right: 30%;
@@ -69,36 +76,31 @@
     margin-bottom: 1%;
 }
 
-.btn-usu-edit-salvar{
+.btn-usu-create-disabled{
     float: left;
-    width: 32%;
+    width: 50%;
+    height: 3em;
+    border: none;
+    color: rgb(204, 204, 204);
+    background-color: #272727;
+}
+
+.btn-usu-create-salvar{
+    float: left;
+    width: 50%;
     height: 3em;
     border: none;
     color: white;
     background-color: #272727;
 }
-.btn-usu-edit-salvar:hover{
+.btn-usu-create-salvar:hover{
     cursor: pointer;
     background-color: #6cc077;
 }
-.btn-usu-edit-editar{
+
+.btn-usu-create-fechar{
     float: left;
-    width: 34%;
-    height: 3em;
-    border: none;
-    color: white;
-    background-color: #272727;
-
-}
-.btn-usu-edit-editar:hover{
-    cursor: pointer;
-    background-color: #8f7a1d;
-
-}
-
-.btn-usu-edit-fechar{
-    float: left;
-    width: 34%;
+    width: 50%;
     height: 3em;
     border: none;
     color: white;
@@ -106,7 +108,7 @@
 
 }
 
-.btn-usu-edit-fechar:hover{
+.btn-usu-create-fechar:hover{
     background-color: #c06c6c;
     cursor: pointer;
 

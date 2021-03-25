@@ -22,6 +22,7 @@ const navigationReducerDefaultState: Navigation = {
     searchMotStatus: "",
     gerarRelatorioClicked:false,
     solicitarViagemClicked: false,
+    novoUsuClicked: false,
     cadastrarMotClicked: false,
     cancelarViagemIDClicked:"",
     concluirViagemIDClicked:"",

@@ -19,6 +19,7 @@ export interface Navigation {
     searchMotStatus:string;
     gerarRelatorioClicked: boolean;
     solicitarViagemClicked: boolean;
+    novoUsuClicked: boolean;
     cadastrarMotClicked: boolean;
     cancelarViagemIDClicked:string;
     concluirViagemIDClicked:string;

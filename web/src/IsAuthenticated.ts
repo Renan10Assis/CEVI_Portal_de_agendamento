@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 import { startLogoutUsuario } from "./store/ducks/actions/AuthUsuario";
 import { useState } from "react";
 
-export const IsAuthenticated = ():boolean => {
+export const IsAuthenticated = (): boolean => {
     const dadosUser = localStorage.getItem('auth_user') || "";
     const dispatch = useDispatch();
-    const [authenticated,setAuthenticated] = useState<boolean>(false);
+    const [authenticated, setAuthenticated] = useState<boolean>(false);
 
     const auth_user: AuthUsuario = dadosUser === "" ? {
         token: "",
@@ -25,16 +25,18 @@ export const IsAuthenticated = ():boolean => {
 
     if (auth_user.token !== "") {
         api.post('/usuarios/auto-auth', auth_user).then(res => {
-            setAuthenticated(res.data.isLogged);
-            if (!res.data.isLogged) {
+            if (res.data.isLogged) {
+                setAuthenticated(res.data.isLogged);
+            } else {
                 dispatch(startLogoutUsuario());
+
             }
         }).catch(err => {
             console.log(err);
             dispatch(startLogoutUsuario());
         });
     }
-    
+
     return authenticated;
 
 }

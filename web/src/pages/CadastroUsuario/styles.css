@@ -72,3 +72,13 @@
     margin-top: 10px;
 
 }
+
+.divisoriaUsuario {
+    float: left;
+    width: 1px;
+    background-color: #7e6f1d;
+    height: 14vh;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 1%;
+}

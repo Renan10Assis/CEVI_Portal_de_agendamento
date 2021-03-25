@@ -103,7 +103,15 @@ const UsuarioGridEdit = () => {
     }
 
 
-    function handleRetrairClick(action: MouseEvent<HTMLDivElement>) {
+    function handleEditarClick(action: MouseEvent<HTMLButtonElement>) {
+        action.preventDefault();
+        setEditData(true);
+    }
+
+
+
+    function handleFecharClick(action: MouseEvent<HTMLButtonElement>) {
+        action.preventDefault();
         if (editData) {
             alert("Salve as alterações antes de fechar!");
         } else {
@@ -116,7 +124,7 @@ const UsuarioGridEdit = () => {
     }
 
 
-    const handleUpdateData = (action: MouseEvent<SVGElement>) => {
+    const handleUpdateData = (action: MouseEvent<HTMLButtonElement>) => {
 
         action.preventDefault();
 
@@ -161,70 +169,80 @@ const UsuarioGridEdit = () => {
 
 
     return (
-        <div id="grid-container">
+        <div id="grid-usuario-container">
 
-            <form action="submit" className={navigationState.usuarioIDClicked ? "grid-user-edit" : "grid-user-edit-hidden"}>
-                <div className="secaoFoto">
-                    <img className="edit-usu-imagem" src={initialUser.usu_imagem ? initialUser.usu_imagem : profile_image} />
+            <img className="edit-usu-imagem" src={initialUser.usu_imagem ? initialUser.usu_imagem : profile_image} />
+            <form action="submit" className="grid-user-edit">
+
+                <div className="secaoUsuDados">
+
+                    <span className="edit-usu-rotulo">Nome de usuário:</span>
+                    {!editData ? <span className="edit-usuario-dados">{initialUser.usu_nome}</span> : null}
+                    {editData ? <input type="text" className="edit-usuario-dados" placeholder={initialUser.usu_nome} onChange={handleUserNameChange} /> : null}
+                </div>
+
+                <div className="secaoUsuDados">
+                    <span className="edit-usu-rotulo">Email:</span>
+                    <span className="edit-usuario-dados">{initialUser.usu_email}</span>
                 </div>
 
                 <div className="secaoUsuDados">
 
-                    <span className="edit-usu-rotulo">Nome de usuário</span>
-                    <span className={editData ? "edit-usunome-hidden" : "edit-usunome"}>{initialUser.usu_nome}</span>
-                    <input type="text" className={!editData ? "edit-usunome-hidden" : "edit-usunome"} placeholder={initialUser.usu_nome} onChange={handleUserNameChange} />
-
-                    <span className="edit-usu-rotulo">Email</span>
-                    <span className="edit-usu-email">{initialUser.usu_email}</span>
-
-
-                    <span className="edit-usu-rotulo">Tipo de usuário</span>
-                    <span className={editData ? "tipo-user-select-hidden" : "edit-usu-tipo"}>{initialUser.usu_tipo}</span>
-                    <select value={tipoUserOption} disabled={editData ? false : true} className={authUserState.user.usu_tipo === "Administrador" && editData ? "tipo-user-select" : "tipo-user-select-hidden"} onChange={handleTipoUserOptionChange}>
+                    <span className="edit-usu-rotulo">Tipo de usuário:</span>
+                    {!editData ? <span className="edit-usuario-dados">{initialUser.usu_tipo}</span> : null}
+                    {authUserState.user.usu_tipo === "Administrador" && editData ? <select value={tipoUserOption} className="edit-sel-usuario-dados" onChange={handleTipoUserOptionChange}>
                         <option value="Administrador">Administrador</option>
                         <option value="Operador">Operador</option>
                         <option value="Cliente">Cliente</option>
 
-                    </select>
+                    </select> : null}
 
-                    <span className="edit-usu-rotulo">Status</span>
-                    <span className={editData ? "usu-status-select-hidden" : "edit-usu-status"}>{initialUser.usu_status}</span>
-                    <select value={userStatusOption} disabled={editData ? false : true} className={authUserState.user.usu_tipo === "Administrador" && editData ? "usu-status-select" : "usu-status-select-hidden"} onChange={handleStatusOptionChange}>
+                </div>
+
+                <div className="secaoUsuDados">
+
+                    <span className="edit-usu-rotulo">Status:</span>
+                    {!editData ? <span className="edit-usuario-dados">{initialUser.usu_status}</span> : null}
+                    {authUserState.user.usu_tipo === "Administrador" && editData ? <select value={userStatusOption} className="edit-sel-usuario-dados" onChange={handleStatusOptionChange}>
                         <option value={listaStatus.ativo}>{listaStatus.ativo}</option>
                         <option value={listaStatus.inativo}>{listaStatus.inativo}</option>
 
-                    </select>
+                    </select> : null}
                 </div>
-                <span className="divisoria-usu"></span>
 
-                <div className="secaoUsuEmpDados">
 
-                    <span className="edit-usu-rotulo">Empresa</span>
-                    <span className={editData?"usu-emp-select-hidden":"usu-emp-label-data"}>{userEmp.emp_nomeFantasia}</span>
-                    <select id="escolha" disabled={editData ? false : true} className={authUserState.user.usu_tipo.toLowerCase() === "administrador" && editData? "usu-emp-select" : "usu-emp-select-hidden"} onChange={handleEmpresaOptionChange}>
+                <span id="divisoria-edit-usuario"></span>
+
+                <div className="secaoUsuDados">
+
+                    <span className="edit-usu-rotulo">Empresa:</span>
+                    {!editData ? <span className="edit-usuario-dados">{userEmp.emp_nomeFantasia}</span> : null}
+                    {authUserState.user.usu_tipo.toLowerCase() === "administrador" && editData ? <select id="escolha" className="edit-usuario-dados" onChange={handleEmpresaOptionChange}>
                         {empresaState.map(empresa => {
                             return <option key={empresa.emp_id} value={empresa.emp_id}>{empresa.emp_nomeFantasia}</option>
                         }
                         )}
 
-                    </select>
+                    </select> : null}
+                </div>
 
+                <div className="secaoUsuDados">
                     <span className="edit-usu-rotulo">CNPJ:</span>
-                    <span className="usu-emp-label-data">{userEmp.emp_cnpj}</span>
+                    <span className="edit-usuario-dados">{userEmp.emp_cnpj}</span>
+                </div>
+
+                <div className="secaoUsuDados">
 
                     <span className="edit-usu-rotulo">Endereço da empresa:</span>
-                    <span className="usu-emp-label-data">{userEmp.emp_endereco}</span>
-
-
-                </div>
-
-                <div className="secaoUsuButtons">
+                    <span className="edit-usuario-dados">{userEmp.emp_endereco}</span>
                     <span id="msgUsuStatus">{msg}</span>
-                    <FiCheck name="submit" id="icon-usu-confirm" visibility={authUserState.user.usu_tipo === "Administrador" && editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={handleUpdateData} />
-                    <FiEdit id="icon-usu-edit" visibility={authUserState.user.usu_tipo === "Administrador" && !editData && navigationState.usuarioIDClicked ? "visible" : "hidden"} onClick={() => setEditData(true)} />
                 </div>
 
-                <div className="secaoUsuRetrair" onClick={handleRetrairClick}><FiArrowUpCircle />Fechar</div>
+
+                <button className="btn-usu-edit-editar" onClick={handleEditarClick}>Editar</button>
+                <button name="submit" className="btn-usu-edit-salvar" onClick={handleUpdateData}>Salvar</button>
+                <button className="btn-usu-edit-fechar" onClick={handleFecharClick}>Fechar</button>
+
             </form>
         </div>
     );

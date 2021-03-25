@@ -14,7 +14,7 @@ import { Motorista } from '../../store/ducks/types/Motorista';
 import { startSetMotoristas } from '../../store/ducks/actions/Motorista';
 import ViagemGridEdit from '../../components/ViagemGridEdit';
 import SearchBlock from '../../components/SearchBlock';
-import EstatViagemBlock from '../../components/EstatViagemBlock';
+import EstatViagemBloco from '../../components/EstatViagemBloco';
 import RelatorioBlock from '../../components/RelatorioBlock';
 import ViagemGridCreate from '../../components/ViagemGridCreate';
 import { startSetEmpresas } from '../../store/ducks/actions/Empresa';
@@ -111,7 +111,7 @@ const Main = () => {
                     <div id="search-block">
                         <SearchBlock />
                         <span className="divisoriaMain"></span>
-                        <EstatViagemBlock />
+                        <EstatViagemBloco />
                         <span className="divisoriaMain"></span>
                         <RelatorioBlock />
                         <span className="divisoriaMain"></span>

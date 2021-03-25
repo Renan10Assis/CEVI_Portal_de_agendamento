@@ -5,7 +5,7 @@ import { Viagem } from "../../store/ducks/types/Viagem";
 import "./styles.css";
 
 
-const EstatViagemBlock = () => {
+const EstatViagemBloco = () => {
 
     const dadosViagens = useSelector((state:AppState)=>state.viagens);
     const listaStatus = useSelector((state:AppState)=>state.viagemStatus);
@@ -55,4 +55,4 @@ const EstatViagemBlock = () => {
     );
 }
 
-export default EstatViagemBlock;
+export default EstatViagemBloco;
